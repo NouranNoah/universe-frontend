@@ -1,0 +1,38 @@
+.linksContent{
+    width: 90%;
+    padding: 10px;
+}
+.linksContent .linksHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+.linksHeader h3{
+    font-size: 18px;
+    font-weight: 500;
+    color: #222222;
+}
+.linksHeader div{
+    cursor: pointer;
+}
+.linksHeader div i{
+    font-size: 14px;
+    color: white;
+    padding: 5px;
+    background-color: #0BA8FF;
+    border-radius: 50%;
+}
+.linksHeader div i:hover{
+    background-color: #0787cc;
+}
+.put-links input{
+    background-color: #F7F9F9;
+    border: 1px solid #00000014;
+    padding: 14px 13px;
+    border-radius: 8px;
+    color: #757575;
+    width: 100%;
+    margin: 5px 0;
+}

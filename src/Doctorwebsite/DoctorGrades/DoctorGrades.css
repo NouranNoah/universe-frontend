@@ -1,0 +1,126 @@
+.DoctorGrades .filters{
+    flex: none;
+}
+/* ========== LOADING ========== */
+.grades-loading {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+}
+
+.skeleton-title {
+  width: 200px;
+  height: 28px;
+  background: #e0e0e0;
+  border-radius: 6px;
+}
+
+.skeleton-select {
+  width: 250px;
+  height: 40px;
+  background: #e0e0e0;
+  border-radius: 6px;
+}
+
+.skeleton-box {
+  height: 120px;
+  background: #e0e0e0;
+  border-radius: 8px;
+}
+
+/* shimmer */
+.grades-loading div {
+  position: relative;
+  overflow: hidden;
+}
+
+.grades-loading div::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150px;
+  height: 100%;
+  width: 150px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.4),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    left: 100%;
+  }
+}
+
+/* ========== ERROR ========== */
+.grades-error {
+  padding: 40px;
+  text-align: center;
+}
+
+.grades-error p {
+  color: #d32f2f;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.grades-error button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+/* data table grade */
+.editInput{
+    border-radius: 8px;
+    width: 30%;
+    border: 1px solid #55555599;
+    padding: 5px;
+}
+.editInput:focus{
+    outline: none;
+    border-color: #007bff;
+}
+.activebtnEdit ,.activebtnSave{
+    border-radius: 36px;
+    padding: 4px;
+    text-align: center;
+    font-weight: 600;
+    size: 12px;
+}
+.activebtnEdit{
+    color: #0BA8FF;
+    border: 1px solid #0BA8FF;
+}
+.activebtnEdit:hover{
+    background-color: #007bff3a;
+}
+.activebtnSave{
+    background-color: #0BA8FF;
+    color: white;
+}
+.activebtnSave:hover{
+    background-color: #007bff;
+}
+.comp ul{
+    background-color: #EEF3FF;
+    border-radius: 10px;
+    padding: 10px 50px;
+    margin-top: -2%;
+}
+.status.pass {
+  color: green;
+  font-weight: 600;
+}
+
+.status.fail {
+  color: red;
+  font-weight: 600;
+}

@@ -1,0 +1,342 @@
+.userDash{
+    display: flex;
+    flex-direction: column;
+    
+}
+.activebtn , .inactivebtn{
+    border-radius: 36px;
+    padding: 4px;
+    text-align: center;
+    font-weight: 600;
+    size: 12px;
+}
+.activebtn{
+    border: 1px solid #14AE5C;
+    color: #14AE5C;
+}
+.inactivebtn{
+    border:  1px solid #CC1D1B;
+    color: #CC1D1B;
+}
+
+.userDash .user-btn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.userDash .user-btn .ins-btn ,.userDash .user-btn .stu-btn {
+    border-radius: 36px;
+    padding: 4px;
+    text-align: center;
+    font-weight: 600;
+    size: 12px;
+    width: 10%;
+    background-color: white;
+    color: #0BA8FF;
+    border: none;
+    cursor: pointer;
+}
+
+.userDash .user-btn .activeUser{
+    border-bottom: 1px solid #0BA8FF;
+}
+.User-content table th, .User-content table td{
+    text-align: center;
+}
+/*         **********************         UserModal        ****************           */
+/* ********************************************************************************** */
+
+.row1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+.modal-boxs .row1 .imguser{
+    width: 250px;
+    height:160px;
+    border: 1px dotted #555555;
+    padding: 5px;
+}
+.row1 .imguser img{
+    width: 250px;
+    height:160px;
+    /* object-fit: cover; */
+}
+.modal-boxs  .row1 .datarow1{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-start;
+    gap: 10px;
+    flex: 1;
+}
+
+.modal-boxs  .profileUser .row2 , .modal-boxs form .row2 {
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+.modal-boxs  .row2 .box1 ,.modal-boxs  .row2 .box2{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    gap: 30px;
+}
+.modal-boxs {
+    background: #FFFFFF;
+    padding: 28px ;
+    width:750px;
+    height: 540px;
+    overflow: hidden;
+    border-radius: 24px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    animation: pop 0.2s ease-in-out;
+}
+.modal-boxs .closeicon{
+    background-color: #D62828;
+    border-radius: 50%;
+    padding: 5px 7px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.modal-boxs .closeicon:hover{
+    background-color: #ab2020;
+}
+.modal-boxs h3{
+    text-align: center;
+    color: #0079C8;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1px;
+}
+
+.modal-boxs form {
+    height: 78%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+.modal-boxs form div ,.modal-boxs .profileUser div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+.modal-boxs form .row1 label , .modal-boxs .profileUser .row1 label{
+    width: 20%;
+    font-size: 14px;
+}
+.modal-boxs form .row2 div
+,.modal-boxs form .row1 div
+,.modal-boxs .profileUser .row2 div
+,.modal-boxs .profileUser .row1 div{
+    position: relative;
+}
+.modal-boxs form .row2 label 
+, .modal-boxs form .row1 label
+,.modal-boxs .profileUser .row1 label
+,.modal-boxs .profileUser .row2 label{
+    font-size: 14px;
+    position: absolute;
+    left: 9px;
+}
+.modal-boxs .natId input{
+    padding-left: 18%;
+}
+.modal-boxs .birth input{
+    padding-left: 31%;
+}
+.modal-boxs  .phone input{
+    padding-left: 18%;
+}
+.modal-boxs .emailuserin input{
+    padding-left: 11%;
+}
+.modal-boxs  input {
+    flex: 1;
+    padding: 12px 9px;
+    margin: 7px 0;
+    border: 1px solid #5555554e;
+    border-radius: 8px;
+    color: #555555;
+    font-size: 14px;
+}
+.modal-boxs  input:focus ,.row2 select:focus{
+    outline: none;
+    border-color:#0079C8 ;
+}
+.modal-boxs  input::placeholder{
+    font-size: 12px;
+    color: #B4B0BF;
+}
+.row2 select {
+    width: 100%;
+    padding: 12px 40px 12px 12px; 
+    margin: 7px 0;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    font-size: 14px;
+    background-color: #fff;
+    color: #333;
+    outline: none;
+    appearance: none;         
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L7 7L13 1' stroke='%230BA8FF' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+}
+
+/* hover */
+.row2 select:hover {
+    border-color: #0BA8FF;
+}
+
+/* focus */
+.row2 select:focus {
+    border-color: #0BA8FF;
+}
+.row2 select option {
+    font-size: 14px;
+    color: #333333;
+}
+.right-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 5px;
+}
+
+.pagination button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: #333;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+
+
+@media (max-width: 768px) {
+  .userDash .user-btn {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+    .userDash {
+        margin-top: 10%;
+    }
+  .userDash .user-btn .ins-btn,
+  .userDash .user-btn .stu-btn {
+    width: 100%;
+  }
+  .User-content table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .User-content table th,
+  .User-content table td {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+  .modal-boxs {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .modal-boxs .row1 {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .modal-boxs .row1 .imguser,
+  .modal-boxs .row1 .datarow1 {
+    width: 100%;
+  }
+
+  .modal-boxs form div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .row2 .box1, .row2 .box2 {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .row2 select {
+    padding: 10px 12px;
+  }
+  .modal-boxs {
+    width: 90%;
+    padding: 20px;
+    height: auto;
+  }
+
+  .modal-boxs form div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .modal-boxs form label {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+}
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.admin-info {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.admin-info img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}

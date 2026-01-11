@@ -1,0 +1,96 @@
+.FooterDoctor {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 40px 60px;
+    margin-top: 60px;
+    background: linear-gradient(135deg, #0079C8, #003B62);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+/* Logo + description */
+.footerb1 {
+  flex: 2;
+}
+
+.footerb1 .SidebarLogo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.footerb1 img {
+  width: 36px;
+  height: 36px;
+}
+.footerb1 .SidebarLogo p {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+
+.FooterDoctor h4 {
+  color: #E6F4FF;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.footerb1 p,
+.footerb2 p,
+.footerb3 p {
+  color: #D6EAF8;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* Support */
+.footerb2,
+.footerb3 {
+  flex: 1;
+}
+
+.footerb2 p,
+.footerb3 p {
+  font-size: 14px;
+  color: #E8E8E8;
+  margin-bottom: 8px;
+}
+
+.footer-link {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #FFFFFF;
+}
+
+
+/* ================= Responsive ================= */
+
+@media (max-width: 992px) {
+  .FooterDoctor {
+    padding: 30px;
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .FooterDoctor {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footerb1 p {
+    max-width: 100%;
+  }
+
+  .footerb1 .SidebarLogo {
+    justify-content: center;
+  }
+}

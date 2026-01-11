@@ -1,0 +1,395 @@
+.Admins-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+.Admins-header h2{
+    font-size: 22px;
+    color: #0079C8;
+    font-weight: 600;
+}
+.Admins-header div{
+    position: relative;
+    flex: 1;
+}
+.Admins-header input{
+    width: -webkit-fill-available;
+    border-radius: 14px;
+    padding: 13px 35px;
+    border: 1px solid #ced0d7;
+    font-size: 14px;
+}
+.Admins-header input::placeholder{
+    color: #ced0d7;
+}
+.Admins-header input:focus{
+    outline: none;
+    border: 2px solid #0079C8;
+}
+.Admins-header i {
+    color: #0079C8;
+    margin-right:10px;
+    position: absolute;
+    top: 30%;
+    left: 10px;
+}
+
+.Admins-header button{
+    background-color: #0BA8FF;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    padding: 13px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 19px;
+    cursor: pointer;
+    width:15%;
+    transition: 0.3s ease;
+}
+.Admins-header button:hover{
+    background-color:#0a8ed1;
+}
+
+
+.admins-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.admins-table th {
+    background: #d8e2e73d;
+    color:#000000DE;
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.admins-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    cursor: pointer;
+}
+.admins-table td div{
+    display: flex;
+    align-items: center;
+}
+.admins-table td img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 2%;
+}
+
+.admins-table tr:hover {
+  background: #f7f9ff;
+}
+
+
+/*                 add Admin                     */
+
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-box {
+    background: #FFFFFF;
+    padding: 48px 64px;
+    width:600px;
+    height: 430px;
+    border-radius: 24px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    animation: pop 0.2s ease-in-out;
+}
+
+@keyframes pop {
+    from { transform: scale(0.9); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+.modal-box .closeicon{
+    background-color: #D62828;
+    border-radius: 50%;
+    padding: 5px 7px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.modal-box .closeicon:hover{
+    background-color: #ab2020;
+}
+.modal-box h3{
+    text-align: center;
+    color: #0079C8;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 14px;
+}
+
+.modal-box form{
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.modal-box form div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.modal-box form label{
+    font-size: 14px;
+    width: 25%;
+}
+.modal-box form input {
+    flex: 1;
+    padding: 12px 16px;
+    margin: 13px 0;
+    border: 1px solid #5555554e;
+    border-radius: 8px;
+    color: #555555;
+    font-size: 14px;
+}
+.modal-box form input:focus{
+    outline: none;
+    border-color:#0079C8 ;
+}
+.modal-box form input::placeholder{
+    font-size: 12px;
+    color: #B4B0BF;
+}
+
+.btns-group{
+    gap: 50%;
+    margin: 0 5px;
+    margin-top: 15px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+.right-btn {
+    background: #0BA8FF;
+    color: #FFFFFF;
+    padding: 13px 0 ;
+    border-radius:16px;
+    font-weight: 600;
+    border: none;
+    transition: 0.3s ease;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+}
+.right-btn:hover{
+    background-color: #0a8ed1;
+}
+
+.left-btn {
+    background: #0baaff00;
+    color: #0BA8FF;
+    padding: 13px 0px;
+    font-weight: 600;
+    border-radius:16px;
+    border: 1px solid #0BA8FF;
+    transition: 0.3s ease;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+}
+.left-btn:hover{
+    background-color: rgba(255, 0, 0, 0.23);
+}
+
+/* ................................Profile Admin......................... */
+
+.imgAdmin img {
+  width: 90%;
+  height: 90%;
+  padding: 10px ;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+/* Data box */
+.dataAdminBox {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 15px;
+}
+.dataAdmin{
+    flex: 2;
+}
+.imgAdmin{
+    flex: 1;
+    border: 2px solid #ddd;
+    padding: 10px;
+}
+.dataAdmin label ,.modal-box form .dataAdmin label{
+  font-weight: 600;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+  display: block;
+}
+.modal-box form .dataAdmin{
+    flex-direction: column;
+}
+
+.dataAdmin input  {
+    padding: 12px 16px;
+    margin-bottom: 15px;
+    border: 1px solid #5555554e;
+    border-radius: 8px;
+    font-size: 14px;
+    width: 100%;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+
+.deletemsg{
+    position: absolute;
+    top: 34%;
+    left: 34%;
+    background-color: #cfeeff;
+    padding: 40px 64px;
+    border-radius: 24px;
+}
+
+.deletemsg div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5%;
+}
+
+
+
+
+@media (max-width: 1024px) {
+
+  .Admins-header {
+    gap: 15px;
+  }
+
+  .Admins-header button {
+    width: auto;
+    padding: 12px 20px;
+  }
+
+  .Sidebar-content {
+    flex: 0.6;
+    margin: 0 12px;
+  }
+
+  .admins-table th,
+  .admins-table td {
+    font-size: 13px;
+  }
+}
+@media (max-width: 768px) {
+    .dashboard-content {
+        width: 100%;
+        margin: 0;
+        height: 100vh;
+    }
+.Admins-content{
+    margin-top: 10%;
+}
+  /* Header */
+  .Admins-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .Admins-header div {
+    width: 100%;
+  }
+
+
+  .Admins-header button {
+    width: 100%;
+  }
+
+  
+
+  /* Table */
+  .admins-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  /* Profile Data */
+  .dataAdminBox {
+    flex-direction: column;
+  }
+
+  .imgAdmin {
+    width: 100%;
+    text-align: center;
+  }
+
+  .imgAdmin img {
+    width: 150px;
+    height: 150px;
+  }
+  .dashboard-container {
+    height: auto;
+}
+}
+@media (max-width: 480px) {
+
+  .modal-box {
+    width: 90%;
+    padding: 20px;
+    height: auto;
+  }
+
+  .modal-box form div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .modal-box form label {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .btns-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .left-btn,
+  .right-btn {
+    width: 100%;
+  }
+}

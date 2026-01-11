@@ -1,0 +1,143 @@
+.ProfileAdminContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 95%;
+    padding: 10px 20px;
+}
+.passAdminContent{
+    padding: 10px 20px;
+}
+.ProfileAdminContent .dataProfile{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    gap: 20px;
+}
+.ProfileAdminContent .dataProfile .imguser{
+    flex: 0.5;
+    border:1px dotted #555555 ;
+}
+.ProfileAdminContent .dataProfile .imguser img{
+    width: 90%;
+    padding: 15px;
+}
+.ProfileAdminContent .dataProfile  .datarow1{
+    align-items: start;
+    justify-content: flex-start;
+    gap: 40px;
+    flex: 1;
+}
+.passAdmin {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 5% 0;
+}
+.ProfileAdminContent .dataProfile  .datarow1 div{
+    border: 0.25px solid #42508845;
+    padding: 6px 10px ;
+    border-radius: 8px;
+    margin-bottom: 3%;
+}
+.ProfileAdminContent .dataProfile .datarow1 label{
+    font-size: 14px;
+    font-weight: 500;
+}
+.ProfileAdminContent .dataProfile .datarow1 input {
+    flex: 1;
+    padding: 12px 9px;
+    margin: 7px 0;
+    border: 1px solid #5555554e;
+    border-radius: 8px;
+    background-color: #EEECF2;
+    color:#555555E5;
+    font-size: 14px;
+    width: 95%;
+}
+.passAdminContent .passAdmin input{
+    padding: 12px 9px;
+    margin: 7px 0;
+    border: 1px solid #5555554e;
+    border-radius: 8px;
+    background-color: #EEECF2;
+    color:#555555E5;
+    font-size: 14px;
+    width:96%;
+}
+.ProfileAdminContent .dataProfile .datarow1 input:focus ,.passAdminContent .passAdmin input:focus{
+    outline: none;
+    border: 1px solid #0079C8;
+}
+
+.ProfileAdminContent h3,.passAdminContent h3{
+    color: #0079C8;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1px;
+}
+.password-field {
+  position: relative;
+  width: 100%;
+}
+
+.password-field i {
+  position: absolute;
+  right: 45px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #0079C8;
+}
+
+@media (max-width: 968px) {
+  .ProfileAdminContent .dataProfile {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .ProfileAdminContent .dataProfile .imguser,
+  .ProfileAdminContent .dataProfile .datarow1 {
+    width: 100%;
+  }
+
+  .ProfileAdminContent .dataProfile .imguser img {
+    width: 100%;
+    padding: 10px 0;
+  }
+  .ProfileAdminContent .datarow1 div {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .ProfileAdminContent .datarow1 input {
+    width: 100%;
+  }
+
+  .btns-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btns-group button {
+    width: 100%;
+  }
+  .ProfileAdminContent {
+    padding: 10px;
+    margin-top: 7%;
+  }
+
+  .ProfileAdminContent h3 {
+    font-size: 20px;
+  }
+  .ProfileAdminContent .datarow1 div {
+    padding: 5px;
+  }
+
+  .ProfileAdminContent .datarow1 input {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+

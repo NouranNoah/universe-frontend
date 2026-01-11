@@ -1,0 +1,218 @@
+/* ================= Head Profile ================= */
+.headProfileDoc {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 3% 0;
+}
+
+.headProfileDoc .headProfileDocbox1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.headProfileDoc .headProfileDocbox1 img {
+  width: 150px;
+  height: 168px;
+  border-radius: 46px;
+  border: 2px solid #001354;
+}
+
+.headProfileDoc .headProfileDocbox1 div {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.headProfileDoc .headProfileDocbox1 div h3 {
+  font-size: 20px;
+  line-height: 0%;
+  font-weight: 500;
+}
+
+.headProfileDoc .headProfileDocbox1 div p {
+  color: #909090;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.headProfileDocbox2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headProfileDocbox2 button {
+  background-color: #D62828;
+  padding: 12px 28px;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.headProfileDocbox2 button:hover {
+  background-color: #aa2020;
+}
+
+.headProfileDocbox2 p {
+  color: #343A40B2;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* ================= Data Profile ================= */
+.dataProfileDoc {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap; /* عشان يلتف على الموبايل */
+}
+
+.dataProfileDoc .dataProfileDocCard {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.dataProfileDoc .dataProfileDocCard .dataBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.dataBox label {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 5px 0;
+}
+
+.dataBox input {
+  padding: 14px 20px;
+  background-color: #0000000D;
+  border-radius: 8px;
+  border: none;
+  color: #6d6d6d;
+}
+
+.dataBox input:focus {
+  outline: none;
+  border: 1px solid #001354;
+}
+
+/* ================= Email Card ================= */
+.emailProfileDocCard {
+  padding: 4% 0;
+}
+
+.emailProfileDocCard h4 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.emailProfileDocCard div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap; /* يلتف على الموبايل */
+}
+
+.emailProfileDocCard img {
+  width: 48px;
+  height: 48px;
+}
+
+/* ================= Media Queries ================= */
+@media (max-width: 1024px) {
+  .headProfileDoc {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .headProfileDocbox1 {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .headProfileDoc .headProfileDocbox1 img {
+    width: 120px;
+    height: 135px;
+  }
+
+  .headProfileDoc .headProfileDocbox1 div h3 {
+    font-size: 18px;
+  }
+
+  .headProfileDoc .headProfileDocbox1 div p {
+    font-size: 14px;
+  }
+
+  .headProfileDocbox2 button {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+
+  .dataProfileDoc {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .headProfileDoc {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .headProfileDocbox1 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .headProfileDoc .headProfileDocbox1 img {
+    width: 100px;
+    height: 110px;
+  }
+
+  .headProfileDoc .headProfileDocbox1 div h3 {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .headProfileDoc .headProfileDocbox1 div p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .headProfileDocbox2 {
+    width: 100%;
+  }
+
+  .headProfileDocbox2 button {
+    width: 100%;
+  }
+
+  .dataProfileDoc {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .emailProfileDocCard div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .emailProfileDocCard img {
+    width: 40px;
+    height: 40px;
+  }
+}

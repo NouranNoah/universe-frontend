@@ -1,0 +1,53 @@
+.skeleton {
+  pointer-events: none;
+}
+
+.skeleton-line,
+.skeleton-icon {
+  background: linear-gradient(
+    90deg,
+    #e0e0e0 25%,
+    #f5f5f5 37%,
+    #e0e0e0 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.4s ease infinite;
+  border-radius: 6px;
+}
+
+.skeleton-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.skeleton-line.title {
+  width: 120px;
+  height: 24px;
+}
+
+.skeleton-line.number {
+  width: 80px;
+  height: 24px;
+}
+
+.skeleton-line.small {
+  width: 140px;
+  height: 22px;
+}
+
+.skeleton-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}

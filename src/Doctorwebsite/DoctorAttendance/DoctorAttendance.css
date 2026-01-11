@@ -1,0 +1,263 @@
+/* ================= Container ================= */
+.attendanceContent {
+  padding: 20px;
+  
+  border-radius: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ================= Empty State ================= */
+.emptyAttendance {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #555;
+}
+
+.emptyAttendance i {
+  font-size: 50px;
+  color: #0079c8;
+}
+
+.emptyAttendance button {
+  margin-top: 10px;
+  background-color: #0ba8ff;
+  border: none;
+  color: white;
+  padding: 14px 18px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+/* ================= Header ================= */
+.AttendanceHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.AttendanceHeader h3 {
+  font-size: 20px;
+}
+
+.AttendanceHeader div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.AttendanceHeader button {
+  background-color: #0ba8ff;
+  border: none;
+  color: white;
+  padding: 14px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.AttendanceHeader button:hover {
+  background-color: #0385cc;
+}
+
+.endedTime {
+  color: #0ba8ff;
+  border-radius: 8px;
+  border: 0.5px solid #0ba8ff;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ended {
+  color: gray;
+  border-radius: 8px;
+  border: 0.5px solid #ccc;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ================= QR Card ================= */
+.QrCard {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.QrCard .imgQr {
+  background-color: #F7F9F9;
+  border-radius: 16px;
+  padding: 20px;
+  flex-shrink: 0;
+}
+
+.QrCard img {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  object-fit: contain;
+}
+
+.QrCard.ended {
+  opacity: 0.8;
+  filter: grayscale(40%);
+}
+
+/* ================= Lecture Data ================= */
+.LEcData {
+  flex: 1;
+  border-radius: 16px;
+  background-color: #F7F9F9;
+  padding: 20px;
+  min-width: 280px;
+}
+
+.LEcData h3 {
+  margin-bottom: 15px;
+}
+
+.dataAttend {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ================= Chart ================= */
+.chart {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  flex-shrink: 0;
+}
+
+.chartCenter {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.chartCenter h3 {
+  font-size: 28px;
+  color: #0079c8;
+  margin: 0;
+}
+
+.chartCenter span {
+  font-size: 14px;
+  color: #807f7f;
+}
+
+/* ================= Numbers ================= */
+.dataChart {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.dataChart div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.attendpres {
+  color: #807f7f;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.colorPresent {
+  background-color: #0079c8;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.colorAbsent {
+  background-color: #d1e6ff;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.dateToNoti select {
+  width: 100%;
+  padding: 12px 40px 12px 12px;
+  margin: 7px 0;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #333;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-image: url("data:image/svg+xml,%3Csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L7 7L13 1' stroke='%230BA8FF' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+
+/* ================= Media Queries ================= */
+@media (max-width: 1024px) {
+  .QrCard {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dataAttend {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .chart {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 600px) {
+  .AttendanceHeader h3 {
+    font-size: 18px;
+  }
+
+  .AttendanceHeader button,
+  .endedTime {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .chart {
+    width: 120px;
+    height: 120px;
+  }
+
+  .chartCenter h3 {
+    font-size: 22px;
+  }
+
+  .LEcData {
+    padding: 15px;
+  }
+
+  .QrCard img {
+    max-width: 200px;
+  }
+}

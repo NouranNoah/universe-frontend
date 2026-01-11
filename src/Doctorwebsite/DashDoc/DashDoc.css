@@ -1,0 +1,309 @@
+.total-boxsDoc{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 16px 0;
+}
+.total-boxsDoc .Total-box{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1% 2%;
+    background-color: #F7F9F9;
+}
+.total-boxsDoc .Total-box img{
+    width: 100px;
+    height: 100px;
+}
+.total-boxsDoc .Total-box .text{
+    color: #9593A8;
+    font-size: 16px;
+    letter-spacing: 1.5%;
+    line-height: 20%;
+    font-weight: 600;
+}
+
+/* //////////////////////////////attendanceStatsBox////////////////////////////////////////// */
+.towdashpage{
+    background-color: #F7F9F9;
+    border-radius: 12px;
+    padding: 10px 0;
+}
+.attendanceStatsBox{
+    background-color: #F7F9F9;
+    border-radius: 12px;
+    padding-bottom: 20px;
+    margin:  2%;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.22);
+}
+.head-Attendance-statistics{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    border-bottom: 1px solid #E5E3EB;
+}
+.head-Attendance-statistics h3{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.rightHead {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+.legendItem{
+    display: flex;
+    align-items: center;
+    gap:10px
+}
+.detailAtten{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.detailAtten p{
+    color: #9593A8;
+    font-size: 14px;
+    font-weight: 500;
+}
+.detailAtten .absent{
+    background-color: #0079C8;
+    width: 35px;
+    height: 20px;
+    border-radius: 50%;
+}
+.detailAtten .present{
+    background-color: #D1E6FF;
+    width: 35px;
+    height: 20px;
+    border-radius: 50%;
+}
+.head-Attendance-statistics select {
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    border: 1px solid #E5E3EB;
+    padding: 6px 12px;
+    color: #0BA8FF;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.empty-attendance {
+  height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #9593A8;
+  font-size: 14px;
+  text-align: center;
+}
+
+.empty-attendance p {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+/* ///////////////////////////PerformanceAnalysis///////////////////////////////////// */
+.PerformanceAnalysis {
+    display: flex;
+    flex-wrap: wrap; /* يخلي العناصر تتعدى على سطر تاني لو الشاشة ضيقة */
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px; /* زودت الـ gap شوية عشان يبقى فيه تنفس بين الكروت */
+    margin: 2% 2%;
+    padding: 20px;
+}
+
+.StudentAnalysis, .CourseAnalysis {
+    flex: 1 1 45%; /* ياخد تقريبًا نص العرض لكل كارت ويكون responsive */
+    background-color: #F7F9F9;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.22);
+    border-radius: 12px; /* حواف مدورة */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 400px;
+}
+
+.titlePerform {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    gap: 15px;
+}
+
+.titlePerform p ,.CourseAnalysis p {
+    color: #807F7F;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    text-align: center;
+}
+
+h3 {
+    margin-bottom: 20px;
+    color: #333333;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* تحسين الـ Doughnut chart responsiveness */
+.coursesChartContainer canvas {
+    width: 400px;
+    height: 300px;
+}
+.studentChartContainer canvas{
+  width: 250px;
+  height: 200px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* ===== Tablet (<= 1024px) ===== */
+@media (max-width: 1024px) {
+
+  /* Total boxes */
+  .total-boxsDoc {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .total-boxsDoc .Total-box {
+    flex: 1 1 48%;
+  }
+
+  .total-boxsDoc .Total-box img {
+    width: 80px;
+    height: 80px;
+  }
+
+
+
+  /* Attendance header */
+  .head-Attendance-statistics {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .rightHead {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  /* Performance cards */
+  .StudentAnalysis,
+  .CourseAnalysis {
+    flex: 1 1 100%;
+    height: auto;
+  }
+
+  canvas {
+    
+  }
+}
+
+/* ===== Mobile (<= 768px) ===== */
+@media (max-width: 768px) {
+
+  /* Total boxes */
+  .total-boxsDoc {
+    flex-direction: column;
+  }
+
+  .total-boxsDoc .Total-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    width: 85%;
+  }
+
+  .total-boxsDoc .Total-box img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .total-boxsDoc .Total-box .text {
+    font-size: 14px;
+    line-height: normal;
+  }
+
+  /* Attendance */
+  .attendanceStatsBox {
+    margin: 16px ;
+  }
+
+  .head-Attendance-statistics {
+    padding: 16px;
+  }
+
+  .detailAtten {
+    gap: 12px;
+  }
+
+  .detailAtten p {
+    font-size: 13px;
+  }
+
+  .head-Attendance-statistics select {
+    width: 100%;
+  }
+
+  /* Performance */
+  .PerformanceAnalysis {
+    padding: 16px;
+    margin: 16px 0;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  .titlePerform p,
+  .CourseAnalysis p {
+    font-size: 14px;
+  }
+
+  .coursesChartContainer{
+    width: auto;
+  }
+}
+
+/* ===== Small Mobile (<= 480px) ===== */
+@media (max-width: 480px) {
+
+  .total-boxsDoc .Total-box {
+    padding: 14px;
+  }
+
+  .total-boxsDoc .Total-box img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .empty-attendance {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .detailAtten {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  canvas {
+    
+  }
+}
+
+

@@ -1,0 +1,245 @@
+.HeaderWeb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 20px;
+  background-color: #fff;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.HeaderWeb .SidebarLogo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.HeaderWeb .SidebarLogo img {
+  width: 40px;
+  height: 40px;
+}
+
+.HeaderWeb .SidebarLogo p {
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+}
+
+.HeaderWeb ul {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.HeaderWeb ul li a {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  text-decoration: none;
+  color: #0079C8;
+  font-weight: 500;
+  position: relative;
+}
+
+.HeaderWeb ul li a .underline {
+  width: 43px; 
+  height: 6px;
+  background-color: #0BA8FF;
+  margin-top: 4px;
+  border-radius: 30px;
+  opacity: 0; 
+  transition: opacity 0.3s ease;
+}
+.HeaderWeb ul li a.activeLink{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #0BA8FF;
+}
+.HeaderWeb ul li a.activeLink .underline {
+  opacity: 1; 
+}
+
+.HeaderWeb ul li a:hover {
+  color: #0BA8FF;
+}
+
+/* loading */
+.profile-loading {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: loadingShimmer 1.5s linear infinite;
+}
+@keyframes loadingShimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+
+
+.HeaderWeb > div:last-child {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.notif{
+  position: relative;
+}
+
+.HeaderWeb > div:last-child i {
+  font-size: 26px;
+  color: #0079C8;
+  cursor: pointer;
+}
+
+.num-of-notif {
+  position: absolute;
+  top: 3px;
+  left: 9px;
+  width: 10px;
+  height: 10px;
+  background-color: #87cfff;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.HeaderWeb > div:last-child img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 2px;
+  border: 1px solid #0079C8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .HeaderWeb {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .HeaderWeb ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .HeaderWeb > div:last-child {
+    width: 100%;
+    justify-content: flex-end;
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+
+  .Sidebar-content {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 260px;
+    margin: 0;
+    border-radius: 0;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+
+  .Sidebar-content.show {
+    left: 0;
+  }
+}
+/* ================= Hamburger ================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 22px;
+  height: 3px;
+  background-color: #0079C8;
+  border-radius: 5px;
+}
+
+
+/* ================= Navigation ================= */
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+/* ================= Mobile ================= */
+@media (max-width: 768px) {
+
+  /* الهيدر يبقى أيقونة بس */
+  .HeaderWeb {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  /* نخفي كل حاجة */
+  .HeaderWeb .navLinks{
+    display: none;
+  }
+
+  /* نظهر الهامبورجر */
+  .hamburger {
+    display: flex;
+  }
+
+  /* لما المينيو تفتح */
+  .HeaderWeb.open {
+    flex-direction: column;
+    width: 80%;
+    left: 5%;
+    background: #fff;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
+    padding: 20px;
+  }
+
+  /* نرجّع اللوجو */
+  .HeaderWeb.open .SidebarLogo {
+    display: none;
+  }
+  .HeaderWeb .SidebarLogo {
+    margin: 0;
+  }
+
+  /* نرجّع اللينكات */
+  .HeaderWeb.open .navLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* نرجّع الجزء اليمين */
+  .HeaderWeb.open .rightSide {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+  }
+}
+

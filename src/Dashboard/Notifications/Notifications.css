@@ -1,0 +1,78 @@
+.notiLab{
+    position: relative;
+}
+.notiLab label{
+    position: absolute;
+    left: 10px;
+}
+.modal-box form .notiLab .small{
+    padding-left: 12%;
+}
+.modal-box form .notiLab .larg{
+    padding-left: 24%;
+}
+
+.dateToNoti{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+.modal-box form .notiLab .chips {
+    justify-content: left;
+}
+.modal-box form .notiLab .select-wrapper {
+  position: relative;
+  width: 40%;
+}
+
+.custom-select {
+  width: auto;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #d0d5dd;
+  background-color: #0BA8FF;
+  font-size: 14px;
+  color: white;
+  outline: none;
+  appearance: none; /* مهم */
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.notiLab select option {
+  background-color: #fff;
+  color: #000;
+}
+.custom-select:focus {
+  border-color: #0BA8FF;
+  box-shadow: 0 0 0 3px rgba(105, 65, 198, 0.15);
+}
+
+.custom-select:hover {
+  border-color: #0BA8FF;
+}
+
+/* Arrow icon */
+.select-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 13px;
+  pointer-events: none;
+}
+
+/* options */
+.custom-select option {
+  padding: 10px;
+  font-size: 14px;
+}
+.custom-select option[value=""] {
+  color: #98a2b3;
+}
+input[readonly] {
+  background-color: #bdcddc4a;
+  color: #667085;
+}

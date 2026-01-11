@@ -1,0 +1,332 @@
+.nextsteps{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 3px 10%;
+}
+.nextsteps .numsteps{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.nextsteps .numsteps .activeStep{
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 20px;
+    letter-spacing: -0.24px;
+    color: #FFFFFF;
+    background-color: #0079C8;
+    padding:6px 12px;
+    border-radius: 64px;
+}
+.nextsteps .numsteps p{
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 120%;
+    color: #0079C8;
+    letter-spacing: 0;
+}
+.nextsteps  .lineSteps{
+    width: 271px;
+    height: 3px;
+    border-radius: 50px;
+    background-color: #0079C84D;
+    transition: background-color 0.3s ease;
+}
+.nextsteps .activeline{
+    background-color: #0079C8;
+    transition: all 0.3s ease;
+}
+.nextsteps .notActiveStep{
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 20px;
+    letter-spacing: -0.24px;
+    color: #0079C8;
+    padding:6px 12px;
+    border-radius: 64px;
+    border: 1px solid #0079C84D;
+    transition: all 0.3s ease;
+}
+.disnon{
+    display: none;
+}
+.group button img{
+    width: 10px;
+}
+.modal-boxs  .grid-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #333;
+  position: absolute;
+  left: 9px;
+  top: 18px;
+}
+.form-group .sellabel{
+  top: 12px;
+}
+.form-group input,
+.form-group select {
+  padding:  12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+  width: 100%;
+  color: #333;
+  flex: auto;
+  width: auto;
+}
+.form-group .selCourse{
+  height: 35px;
+  padding: 8px 12px;
+  border-radius: 50px;
+  font-size: 14px;
+}
+.form-group .medium ,.form-group select {
+    padding-left: 34%;
+
+}
+.form-group .large{
+    padding-left: 44%;
+}
+.form-group .small{
+    padding-left: 23%;
+}
+.form-group .small1{
+    padding-left: 15%;
+}
+
+.form-group textarea {
+  height: 90px;
+  padding: 10px 12px;
+  resize: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #0079C8;
+  box-shadow: 0 0 0 2px rgba(91, 91, 240, 0.1);
+}
+.modal-boxs .longForm {
+  flex: 1; 
+  max-height: 78%;  
+  overflow-x: hidden;
+  overflow-y: auto; 
+}
+.modal-boxs .longForm form{
+  min-height: 100%;  
+}
+.full-width {
+  grid-column: 1 / -1;
+}
+.modal-boxs form .btns-group{
+  margin: 10px 0;
+}
+.btns-group .right-btnnot{
+  flex: 1.3;
+  margin-left: 80%;
+}
+
+
+.prereq-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* flex-wrap: wrap; */
+  gap: 8px;
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #fff;
+  padding-left: 15%;
+}
+.form-group .prereq-container select{
+  width: 25%;
+  padding:0;
+  background-color: #0BA8FF;
+  color: white;
+}
+.form-group .prereq-container select option {
+  background-color: #fff;
+  color: #000;
+}
+.form-group .prereq-container select option:first-child {
+  color: #888;
+}
+
+
+
+.chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  background: #E6F6FF;
+  color: #555555;
+  padding: 8px 12px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.chip i {
+  cursor: pointer;
+  font-size: 12px;
+}
+
+
+.add-chip {
+  border: 1px dashed #3b82f6;
+  background: transparent;
+  color: #3b82f6;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.select-type {
+  margin-left: auto;
+  background: #0079C8;
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .grid-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+.modal-boxs  .schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 20px;
+}
+.modal-boxs .schedule-grid .day-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 6px;
+  transition: 0.3s;
+  background: #fff;
+  flex-direction: column;
+  width: auto;
+}
+.day-card.disabled {
+  opacity: 0.7;
+}
+
+.modal-boxs  .schedule-grid .day-card.active {
+  border-color: #0BA8FF;
+}
+.modal-boxs  .schedule-grid .day-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: #0BA8FF;
+  font-size: 14px;
+}
+.modal-boxs  .schedule-grid .time-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+  font-size: 14px;
+}
+.modal-boxs  .schedule-grid .time-row div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.modal-boxs  .schedule-grid .time-row select {
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 8px;
+  color: #666666;
+}
+.modal-boxs  .schedule-grid .time-row select:focus {
+  outline: none;
+  border:1px solid #015892;
+}
+.modal-boxs  .schedule-grid .day-header input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #0BA8FF; 
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  padding: 4px 8px;
+  margin: 0;
+  flex: 0;
+}
+
+.day-header input[type="checkbox"]:checked {
+  background-color: #0BA8FF; 
+  border-color: #0BA8FF;
+}
+
+.day-header input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 4px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/*                 Modal          */
+/* /////////////////////////////// */
+.tabs{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 15%;
+  gap: 10px;
+  margin: 15px 0;
+}
+.tabs button{
+  padding: 8px 0;
+}
+.tabs button:hover{
+  color: white;
+  background-color: #098de6;
+}

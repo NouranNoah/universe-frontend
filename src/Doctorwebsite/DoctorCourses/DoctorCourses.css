@@ -1,0 +1,948 @@
+.courses-page {
+    min-height: 100vh;
+    padding: 30px;
+}
+
+.courses-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    width: 100%;
+    gap: 20px;
+}
+
+.filters {
+    display: flex;
+    gap: 12px;
+    position: relative;
+    flex: 1;
+}
+.filters i{
+    position: absolute;
+    top: 13px;
+    left: 10px;
+    color: #0BA8FF;
+    font-size: 14px;
+}
+
+.filters input,
+.filters select {
+    border: 1px solid #0BA8FF;
+    padding: 10px 14px;
+    border-radius: 10px;
+    color: #0BA8FF;
+    outline: none;
+}
+.filters input{
+    padding-left: 5%;
+    width: 100%;
+    color: #000;
+    border:  1px solid #E3E5ED;
+}
+
+.filters input:focus{
+    border: 1px solid #0BA8FF;
+}
+
+/* Select */
+.select-wrapper {
+    position: relative;
+}
+.card-headerCC{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.select-wrapper select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    padding: 10px 40px 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* الأيقونة */
+.select-wrapper::after {
+    content: "";
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+
+    background-image: url("../../assets/iconlist.png"); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+/* Grid */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+    gap: 25px;
+}
+
+/* Card */
+.course-card {
+    background: #F7F9F9;
+    color: #000;
+    border-radius: 16px;
+    padding: 24px 25px;
+    box-shadow: 0 0 0 1px #0000001A;
+}
+
+.card-headerC {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-headerC .course-link:hover{
+    text-decoration-color: #0e7cb8;
+}
+
+.card-headerC h3,.card-headerC .course-link {
+    margin: 0;
+    color: #000;
+    transition: all 0.3s ease;
+}
+.card-headerC h3:hover {
+    color: #0e7cb8;
+}
+
+/* Status badge */
+.status {
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status.active {
+    border: 1px solid #14AE5C;
+    color: #14AE5C;
+}
+
+.status.inactive {
+    border: 1px solid #D62828;
+    color: #D62828;
+}
+
+.term {
+    color: #777;
+    margin: 6px 0 16px;
+}
+
+.desc {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Skeleton */
+.skeleton {
+    background: #f5f5f5;
+}
+
+.skeleton-header,
+.skeleton-line,
+.skeleton-footer {
+    background: linear-gradient(
+        90deg,
+        #e5e5e5 25%,
+        #f0f0f0 37%,
+        #e5e5e5 63%
+    );
+    background-size: 400% 100%;
+    animation: shimmer 1.4s ease infinite;
+    border-radius: 8px;
+}
+
+.skeleton-header {
+    height: 24px;
+    width: 60%;
+    margin-bottom: 16px;
+}
+
+.skeleton-line {
+    height: 14px;
+    margin-bottom: 10px;
+}
+
+.skeleton-line.short {
+    width: 40%;
+}
+
+.skeleton-footer {
+    height: 16px;
+    margin-top: 24px;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: -100% 0;
+    }
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    margin-top: 120px;
+    color: #bbb;
+}
+
+.empty-state h3 {
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.empty-state p {
+    font-size: 15px;
+    max-width: 420px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+
+
+
+/* ================= RESPONSIVE ================= */
+
+/* ===== Tablets (<= 1024px) ===== */
+@media (max-width: 1024px) {
+    .courses-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .filters {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .filters input {
+        width: auto;
+    }
+
+    .courses-grid {
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    }
+}
+
+/* ===== Mobile (<= 768px) ===== */
+@media (max-width: 768px) {
+    .User-content{
+        width: 100%;
+    }
+    .docWebsite {
+        padding: 5px 5%;
+    }
+    .courses-page {
+        padding: 20px 16px;
+    }
+
+    .courses-header h2 {
+        font-size: 20px;
+    }
+
+    .filters {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .filters i {
+        top: 14px;
+        left: 12px;
+    }
+
+    .filters input {
+        padding-left: 36px;
+        width: -webkit-fill-available;
+    }
+
+    .select-wrapper {
+        width: auto;
+    }
+
+
+    .courses-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .course-card {
+        padding: 20px;
+    }
+
+    .card-footer {
+        gap: 8px;
+        align-items: flex-start;
+    }
+    .coursesBox1 {
+        width: -webkit-fill-available;
+    }
+}
+
+/* ===== Small Mobile (<= 480px) ===== */
+@media (max-width: 480px) {
+    .courses-header h2 {
+        font-size: 18px;
+    }
+
+    .status {
+        font-size: 12px;
+        padding: 3px 10px;
+    }
+
+    .desc {
+        font-size: 14px;
+    }
+
+    .term {
+        font-size: 13px;
+    }
+}
+
+
+
+
+
+
+
+/* //////////////////////////Course////////////////////////////////////// */
+.courseHeader div{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 20px 0;
+}
+.courseHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.courseHeader h3{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0%;
+    margin: 0;
+}
+.courseHeader p{
+    font-size: 16px;
+    color: #807F7F;
+    font-weight: 400;
+    margin: 0;
+}
+.courseHeader .btn-add{
+    background-color: #0BA8FF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 13px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 19px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.courseHeader .btn-add:hover{
+    background-color:#0a8ed1;
+}
+
+.SpecificCourse .coursesBoxs{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+.coursesBox1{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.coursesBox1 .dataCard1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+.coursesBox1 .dataCard1 div ,.coursesBox1 .dataCard2{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.coursesBox1  label{
+    font-size: 18px;
+    font-weight: 500;
+    color: #222222;
+}
+.coursesBox1 .dataCard1 div input,.coursesBox1 textarea{
+    padding: 14px 15px;
+    background-color: #F7F9F9;
+    border: 1px solid #00000014;
+    color: #757575;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+}
+.coursesBox1 .dataCard1 div input:focus{
+    outline: none;
+    border: 1px solid #0a8ed1;
+}
+
+.lecturesContainer {
+    display: flex;
+    width:100%;
+    gap: 1rem;
+    padding: 1rem 0;
+    position: relative;
+}
+
+.lecturesSlider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    width: 90%;
+    height: 40vh;
+    box-sizing: border-box;
+    align-items: center;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 1rem;
+}
+.lecturesSlider::-webkit-scrollbar {
+  display: none;
+}
+
+.lectureCard {
+    position: relative;
+    flex: 0 0 25%;
+    scroll-snap-align: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 70%;
+
+    background: #f5f5f5;
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px #0000001A;
+}
+.lectureCard div{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+.btn-add {
+    margin-top: 10px;
+    background: #1da1f2;
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.lectureCard h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #222222;
+}
+
+.lectureCard p {
+    color: #807F7F;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.slideCardIcon{
+    margin: 0 10px;
+}
+.slideCardIcon i{
+    position: absolute;
+    top: 40%;
+    color: #0BA8FF;
+    font-size: 50px;
+    cursor: pointer;
+}
+.slideCardIcon i:hover{
+    color: #0a8ed1;
+}
+.slideCardIcon .slideCardIcon1{
+    left: 0px;
+}
+.slideCardIcon .slideCardIcon2{
+    right: 0px;
+}
+.notDoc .modal-box{
+    width:600px;
+    height: 350px;
+    margin-top: 10%;
+}
+.notDoc .modal-box form .dateToNoti{
+    gap: 30px;
+}
+.notDoc .modal-box form .dateToNoti label{
+    width: auto;
+    margin-right: 5px;
+}
+.notDoc .modal-box form label {
+    width: 10%;
+}
+.notDoc .modal-box form .btns-group {
+    gap: 50%;
+}
+
+/* //////////coursesBox2////// */
+.coursesBox2{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ملف DoctorCourses.css */
+
+.custom-caption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.rdp-nav {
+    justify-content: space-between;
+    width: 100%;
+}
+
+.custom-caption .title {
+  font-weight: bold;
+  text-align: center;
+}
+
+.custom-caption .prev,
+.custom-caption .next {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+
+.calendar-card {
+    position: relative;
+  background: #f2f2f2b3;
+  border: 1px solid #0000000D;
+  padding: 10px;
+  border-radius: 24px;
+  width: fit-content;
+  box-shadow: 0 12px 30px #0000001A;
+}
+
+/* الهيدر */
+.rdp-caption {
+  margin-bottom: 16px;
+}
+
+.rdp-caption_label {
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: 30%;
+}
+
+/* أيام الأسبوع */
+.rdp-head_cell {
+  font-size: 12px;
+  color: #1C1C1C;
+  font-weight: 500;
+}
+
+/* الجدول */
+.rdp-table {
+  border-spacing: 5px;
+}
+
+/* اليوم */
+.rdp-day {
+  height: 10;
+  width: 10px;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+/* اليوم اللي فيه محاضرة */
+.lecture-day {
+  background: #0a8fd12c !important;
+  color: #000 !important;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.lecture-day:hover {
+    background-color: #0a8ed1 !important;
+}
+
+/* اليوم الحالي */
+.rdp-day_today {
+  font-weight: 600;
+}
+
+/* الأيام خارج الشهر */
+.rdp-day_outside {
+  color: #d1d5db;
+}
+
+/* الأسهم */
+.rdp-button_previous {
+  border-radius: 50%;
+  color: #0a8ed1;
+}
+
+.lecture-popup {
+  position: absolute;
+  top: 50px; /* ممكن تعدلي حسب حجم الكاليندر */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #F7F9F9;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  z-index: 10;
+  max-width: 300px;
+  text-align: center;
+}
+.lecture-popup h4 {
+  margin: 0 0 0.5rem 0;
+}
+.lecture-popup {
+  position: absolute;
+  top: 50px; 
+  left: 50%;
+  transform: translateX(-50%);
+  background: #F7F9F9;
+  border: 1px solid #00000014;
+  padding: 1rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  z-index: 10;
+  min-width: 300px;
+  max-width: 90%; 
+  text-align: center;
+  box-sizing: border-box; 
+  overflow: hidden; 
+}
+
+.lecture-popup .dateH{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    width: 100%; 
+    box-sizing: border-box;
+    overflow: hidden; 
+}
+
+.lecture-popup .dateH div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1; 
+    min-width: 0; 
+}
+
+.lecture-popup .dateH div input{
+    border-radius: 8px;
+    border: 1px solid #999999;
+    background-color: white;
+    color: #666666;
+    padding: 10px 16px;
+    width: 100%; 
+    box-sizing: border-box;
+}
+
+.lecture-popup label{
+    font-size: 16px;
+    font-weight: 500;
+    color: #222222;
+}
+.lecture-popup button {
+  margin-top: 0.5rem;
+  background: #0a8ed1;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.custom-caption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+/* loading */
+/* Container Skeleton */
+.skeleton-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: shimmer 1.5s infinite linear;
+}
+
+/* Animation shimmer */
+@keyframes shimmer {
+  0% { background-position: -500px 0; }
+  100% { background-position: 500px 0; }
+}
+
+/* Base skeleton style */
+.skeleton-container2 div {
+  background: #e0e0e0;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton-container2 div::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150px;
+  height: 100%;
+  width: 150px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+/* Specific Skeletons */
+.skeleton-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.skeleton-title {
+  width: 200px;
+  height: 25px;
+}
+
+.skeleton-subtitle {
+  width: 120px;
+  height: 15px;
+}
+
+.skeleton-button {
+  width: 100px;
+  height: 30px;
+  border-radius: 20px;
+}
+
+.skeleton-dataCards {
+  display: flex;
+  gap: 10px;
+}
+
+.skeleton-card {
+  flex: 1;
+  height: 80px;
+}
+
+.skeleton-lectures {
+  display: flex;
+  gap: 10px;
+}
+
+.skeleton-lecture {
+  flex: 1;
+  height: 60px;
+  border-radius: 8px;
+}
+
+.skeleton-right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skeleton-calendar {
+  height: 300px;
+  border-radius: 8px;
+}
+
+.skeleton-links, .skeleton-quizs {
+  height: 100px;
+  border-radius: 8px;
+}
+/* ================= Course Header Responsive ================= */
+@media (max-width: 1024px) {
+  .courseHeader {
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .courseHeader div {
+    width: 100%;
+  }
+
+  .courseHeader h3 {
+    font-size: 18px;
+  }
+
+  .courseHeader p {
+    font-size: 14px;
+  }
+
+  .courseHeader .btn-add {
+    padding: 10px 14px;
+    font-size: 11px;
+    width: 50%;
+  }
+  .coursesBox1 .dataCard1 {
+    align-items: flex-start;
+  }
+  .coursesBox1 .dataCard1 div{
+    width: 100%;
+  }
+}
+
+/* ================= Specific Course Boxes ================= */
+@media (max-width: 1024px) {
+  .SpecificCourse .coursesBoxs {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .coursesBox1 .dataCard1 {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .coursesBox1 .dataCard1 div input,
+  .coursesBox1 textarea {
+    width: auto;
+  }
+}
+
+/* ================= Lectures Slider ================= */
+@media (max-width: 1024px) {
+  .lecturesSlider {
+    width: 100%;
+    height: auto;
+    gap: 0.8rem;
+  }
+
+  .lectureCard {
+    flex: 0 0 45%; /* two per row */
+    height: auto;
+  }
+
+  .slideCardIcon i {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .lectureCard {
+    flex: 0 0 80%; /* تقريبا عنصر واحد يظهر */
+    height: auto;
+  }
+
+  .slideCardIcon i {
+    font-size: 30px;
+  }
+}
+
+/* ================= Modal Responsive ================= */
+@media (max-width: 768px) {
+    .modal-box form input {
+        width:-webkit-fill-available;
+    }
+  .notDoc .modal-box {
+    width: 90%;
+    height: auto;
+    margin-top: 15%;
+  }
+
+  .notDoc .modal-box form .dateToNoti {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .notDoc{
+    width: -webkit-fill-available;
+  }
+
+  .notDoc .modal-box form .btns-group {
+    gap: 20%;
+    flex-direction: row;
+  }
+  .notDoc .modal-box h3 {
+    font-size: 16px;
+  }
+}
+
+/* ================= Calendar & Popup ================= */
+@media (max-width: 768px) {
+  .calendar-card {
+    width: 100%;
+    padding: 8px;
+  }
+
+  .lecture-popup {
+    max-width: 90%;
+    top: 40px;
+    padding: 0.8rem;
+  }
+
+  .lecture-popup .dateH {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .lecture-popup .dateH div input {
+    width: 100%;
+  }
+}
+
+/* ================= Text & Inputs ================= */
+@media (max-width: 600px) {
+  .coursesBox1 label,
+  .lectureCard h4,
+  .lectureCard p,
+  .courseHeader h3,
+  .courseHeader p {
+    font-size: smaller;
+  }
+
+  .courseHeader .btn-add {
+    padding: 8px 12px;
+    font-size: 10px;
+  }
+}

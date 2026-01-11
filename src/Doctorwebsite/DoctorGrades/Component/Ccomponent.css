@@ -1,0 +1,244 @@
+.components-wrapper {
+  margin-top: 20px;
+}
+.components-wrapper h3{
+    line-height: 0;
+}
+
+.components-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.components-grid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: #F7F9F9;
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.component-card {
+    width: 100%;
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.card-header h4 {
+  color: #9593A8;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 1.5%;
+  font-weight: 600;
+}
+
+.card-header .percentage {
+    font-size: 24px;
+    color: #222222;
+    font-weight: bold;
+    line-height: 100%;
+    letter-spacing: 1.5%;
+}
+
+.card-actions {
+  display: flex;
+  gap: 12px;
+}
+
+
+.components-wrapper .btn-add:hover{
+    background-color:#0a8ed1;
+}
+
+
+.warning {
+  color: #ef4444;
+  margin-top: 8px;
+  text-align: center;
+}
+.noYet{
+    color: #000000B2;
+    font-size: 14px;
+    text-align: center;
+    padding: 5% 0;
+}
+.comp .modal-box form label {
+    width: 15%;
+}
+.components-wrapper .btns-group {
+    gap: 10%;
+}
+/* ================= Wrapper ================= */
+.components-wrapper {
+  margin-top: 20px;
+}
+
+.components-wrapper h3 {
+  line-height: 0;
+}
+
+/* ================= Header ================= */
+.components-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap; /* عشان يلف على الشاشات الصغيرة */
+  gap: 10px;
+}
+
+/* ================= Grid ================= */
+.components-grid {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: #F7F9F9;
+  border-radius: 24px;
+  padding: 24px;
+  flex-wrap: wrap; /* يلتف لو الشاشة ضيقت */
+}
+
+/* ================= Card ================= */
+.component-card {
+  flex: 1 1 250px; /* grow, shrink, min-width */
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  min-width: 200px;
+}
+
+/* ================= Card Header ================= */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap; /* لف لو الشاشة صغيرة */
+  gap: 5px;
+}
+
+.card-header h4 {
+  color: #9593A8;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 1.5%;
+  font-weight: 600;
+}
+
+.card-header .percentage {
+  font-size: 24px;
+  color: #222222;
+  font-weight: bold;
+  line-height: 100%;
+  letter-spacing: 1.5%;
+}
+
+/* ================= Actions ================= */
+.card-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap; /* يلتف لو الشاشة ضيقت */
+}
+
+.components-wrapper .btn-add:hover {
+  background-color: #0a8ed1;
+}
+
+.warning {
+  color: #ef4444;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.noYet {
+  color: #000000B2;
+  font-size: 14px;
+  text-align: center;
+  padding: 5% 0;
+}
+
+.comp .modal-box form label {
+  width: 15%;
+}
+
+/* Buttons group */
+.components-wrapper .btns-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10%;
+}
+
+/* ================= Media Queries ================= */
+@media (max-width: 1024px) {
+  .components-wrapper .courses-header{
+    padding: 0;
+  }
+  .components-grid {
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .card-header .percentage {
+    font-size: 20px;
+  }
+
+  .card-actions {
+    justify-content: flex-start;
+  }
+  .components-wrapper .btns-group {
+    gap: 5%;
+    flex-direction: column;
+    height: 100px;
+  }
+  .components-header {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .components-header {
+    flex-wrap: nowrap;
+  }
+  .components-header h3{
+    line-height: 1;
+  }
+  .components-grid {
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .component-card {
+    max-width: -webkit-fill-available;
+    padding: 16px;
+  }
+
+  .card-header h4 {
+    font-size: 14px;
+  }
+
+  .card-header .percentage {
+    font-size: 18px;
+  }
+
+  
+}

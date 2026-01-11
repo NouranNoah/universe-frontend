@@ -1,0 +1,39 @@
+.headReports{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn-filter{
+    display: flex;
+    gap: 10px;
+}
+.btn-filter button{
+    color: #0a8ed1;
+    background-color: white;
+    border: 1px solid #0BA8FF;
+    border-radius: 14px;
+    padding:2px 13px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 19px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.btn-filter button:hover{
+    background-color:#0a8ed1;
+    color: white;
+}
+.btn-filter button.active{
+    background-color:#0a8ed1;
+    color: white;
+}
+.reportcontent h4{
+    color: #0079C8;
+    font-size: 18px;
+}
+.delRep{
+    cursor: pointer;
+}
+.delRep:hover{
+    color: rgb(194, 0, 0);
+}
