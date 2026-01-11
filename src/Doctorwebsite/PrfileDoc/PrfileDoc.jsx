@@ -40,7 +40,7 @@ export default function PrfileDoc() {
 
     const handleLogout = () => {
         logout();         
-        navigate("/login"); 
+        navigate("/"); 
     };
 
     //LOading
