@@ -1,40 +1,42 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useEffect, useState } from "react";
 import Cookies from "js-cookie";
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true); // 👈 مهم
 
   useEffect(() => {
     const token = Cookies.get("Bearer");
-    const role = Cookies.get("role");
-    const name = Cookies.get("name");
-    const id = Cookies.get("id");
+    const role = localStorage.getItem("role");
+    const name = localStorage.getItem("name");
+    const id = localStorage.getItem("id");
 
     if (token && role) {
       setUser({ token, role, name, id });
     }
+
+    setLoading(false);
   }, []);
 
   const login = (data) => {
-    setUser(data);
     Cookies.set("Bearer", data.token);
-    Cookies.set("role", data.role);
-    Cookies.set("name", data.name);
-    Cookies.set("id", data.id, { path: "/" });
+    localStorage.setItem("role", data.role);
+    localStorage.setItem("name", data.name);
+    localStorage.setItem("id", data.id);
+
+    setUser(data);
   };
 
   const logout = () => {
     Cookies.remove("Bearer");
-    Cookies.remove("role");
-    Cookies.remove("name");
-    Cookies.remove("id");
+    localStorage.clear();
     setUser(null);
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout, loading }}>
       {children}
     </AuthContext.Provider>
   );

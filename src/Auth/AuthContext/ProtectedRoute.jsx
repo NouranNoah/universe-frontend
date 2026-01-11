@@ -1,20 +1,20 @@
-import { Navigate } from "react-router-dom";
 import { useContext } from "react";
+import { Navigate } from "react-router-dom";
 import { AuthContext } from "./authContext";
 
 export default function ProtectedRoute({ children, allowedRoles }) {
-  const { user } = useContext(AuthContext);
+  const { user, loading } = useContext(AuthContext);
+
+  if (loading) {
+    return <div>Loading...</div>; 
+  }
 
   if (!user) {
-    // لو مش عامل login
-    return <Navigate to="/login" replace />;
+    return <Navigate to="/" replace />;
   }
 
   if (!allowedRoles.includes(user.role)) {
-    // لو الدور غير مسموح، حوّليه على صفحته
-    if (user.role === "admin") return <Navigate to="/dashboard/dashboardAdmin" replace />;
-    if (user.role === "professor") return <Navigate to="/doctor" replace />;
-    if (user.role === "student") return <Navigate to="/student" replace />;
+    return <Navigate to="/" replace />;
   }
 
   return children;
