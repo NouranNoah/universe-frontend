@@ -3,7 +3,7 @@ import profileDefault from '../../../assets/default-profile-picture.jpg';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { getInstructorFun, updateInstructorStatusFun } from '../../../services/usersService';
-import EditInstructor from './editInstructor';
+import EditInstructor from './EditInstructor';
 
 export default function ProfileInstructor({instructorsId , getInstructors , setShowProfileModal}) {
     const [instructor , setInstructor] = useState({
