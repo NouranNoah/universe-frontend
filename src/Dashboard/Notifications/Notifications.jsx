@@ -48,7 +48,7 @@ export default function Notifications() {
   return (
     <div className='Admins-content'>
         <div className='Admins-header'>
-            <h2>Notifications</h2>
+            <h2>Notifications ({notifications.length})</h2>
             <div>
                 <i className="fa-solid fa-magnifying-glass"></i>
                 <input

@@ -62,10 +62,12 @@ export default function Login() {
             `https://uni-verse-rho.vercel.app/auth/login`, 
         form
         );
-
+        
+        
         login({
           token: res.data.token,
           role: res.data.data.role,
+          type: res.data.data.type,
           name: res.data.data.name,
           id: res.data.data._id
         });

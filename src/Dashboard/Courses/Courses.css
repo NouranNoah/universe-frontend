@@ -12,7 +12,9 @@
     justify-content: center;
     text-align: center;
 }
-
+.Admins-header .btn-add{
+  margin: 0;
+} 
 .nextsteps .numsteps .activeStep{
     font-size: 12px;
     font-weight: bold;

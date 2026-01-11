@@ -10,11 +10,12 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const token = Cookies.get("Bearer");
     const role = localStorage.getItem("role");
+    const type = localStorage.getItem("type");
     const name = localStorage.getItem("name");
     const id = localStorage.getItem("id");
 
     if (token && role) {
-      setUser({ token, role, name, id });
+      setUser({ token, role,type, name, id });
     }
 
     setLoading(false);
@@ -23,6 +24,7 @@ export const AuthProvider = ({ children }) => {
   const login = (data) => {
     Cookies.set("Bearer", data.token);
     localStorage.setItem("role", data.role);
+    localStorage.setItem("type", data.type);
     localStorage.setItem("name", data.name);
     localStorage.setItem("id", data.id);
 
@@ -31,7 +33,10 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     Cookies.remove("Bearer");
-    localStorage.clear();
+    localStorage.removeItem("role");
+    localStorage.removeItem("type");
+    localStorage.removeItem("name");
+    localStorage.removeItem("id");
     setUser(null);
   };
 

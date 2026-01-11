@@ -17,8 +17,15 @@ export const getAllReportsFun = async(type = 'all')=>{
     return res.data;
 }
 
+
 export const deletereportFun = async (id)=>{
     const res = await axios.delete(`${API}/report/${id}`,{
+        headers:{Authorization:token}
+    })
+    return res.data;
+}
+export const addReportFun = async (form)=>{
+    const res = await axios.post(`${API}/report`,form,{
         headers:{Authorization:token}
     })
     return res.data;
@@ -36,8 +43,8 @@ export const getAllComplaintFun = async (type)=>{
     })
     return res.data;
 }
-export const addComplaintFun = async ()=>{
-    const res = await axios.post(`${API}/complaint`,{
+export const addComplaintFun = async (form)=>{
+    const res = await axios.post(`${API}/complaint`,form,{
         headers:{Authorization:token}
     })
     

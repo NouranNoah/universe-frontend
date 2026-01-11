@@ -43,7 +43,7 @@ export default function Department() {
   return (
     <div className='Admins-content'>
         <div className='Admins-header'>
-            <h2>Departments list</h2>
+            <h2>Departments list ({departments.length})</h2>
             <div>
                 <i className="fa-solid fa-magnifying-glass"></i>
                 <input

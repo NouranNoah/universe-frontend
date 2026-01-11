@@ -48,7 +48,7 @@ export default function Admins() {
    return (
     <div className='Admins-content'>
         <div className='Admins-header'>
-            <h2>Admins</h2>
+            <h2>Admins ({admins.length})</h2>
             <div>
                 <i className="fa-solid fa-magnifying-glass"></i>
                 <input

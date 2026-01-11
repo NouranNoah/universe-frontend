@@ -73,7 +73,7 @@ export default function Courses() {
     return (
         <div className='Admins-content'>
             <div className='Admins-header'>
-                <h2>Courses / {coursesType}</h2>
+                <h2>Courses / {coursesType} ({courses.length})</h2>
                 <div>
                     <i className="fa-solid fa-magnifying-glass"></i>
                     <input

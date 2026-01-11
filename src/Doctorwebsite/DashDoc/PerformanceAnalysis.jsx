@@ -98,16 +98,18 @@ export default function PerformanceAnalysis({ numData }) {
   });
 
   // ================= Courses Legend Options =================
+  const isMobile = window.innerWidth < 768;
+
   const coursesOptions = {
-  responsive: true,
-  maintainAspectRatio: false,  // مهم جدًا
-  plugins: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
     legend: {
-      position: "right",
+      position: isMobile ? "bottom" : "right",
       labels: {
         usePointStyle: true,
-        padding: 20,
-        font: { size: 14 },
+        padding: 15,
+        font: { size: 13 },
         generateLabels(chart) {
           const data = chart.data;
           return data.labels.map((label, i) => ({
@@ -119,8 +121,11 @@ export default function PerformanceAnalysis({ numData }) {
         },
       },
     },
-  },
-};
+    },
+  };
+
+
+
 
 
   return (

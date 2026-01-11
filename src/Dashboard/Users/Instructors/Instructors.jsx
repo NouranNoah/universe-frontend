@@ -58,7 +58,7 @@ export default function Instructors() {
   return (
     <div className='User-content'>
         <div className='Admins-header'>
-            <h2>Instructors</h2>
+            <h2>Instructors ({instructors.length})</h2>
             <div>
                 <i className="fa-solid fa-magnifying-glass"></i>
                 <input

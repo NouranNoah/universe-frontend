@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import logo from '../../assets/logo.png';
 import { NavLink } from 'react-router-dom';
 import './HeaderDoctor.css';
@@ -6,6 +6,7 @@ import { getProfileDoctorFun } from '../../services/DoctorServices/ProfileServic
 import profileDefult from '../../assets/default-profile-picture.jpg';
 import NotificationDoc from '../../Doctorwebsite/NotificationDoc/NotificationDoc';
 import { getNotificationsFun } from '../../services/DoctorServices/notification';
+import { AuthContext } from '../../Auth/AuthContext/authContext';
 
 export default function HeaderDoctor() {
   const [imgDoc, setImgDoc] = useState('');
@@ -14,8 +15,8 @@ export default function HeaderDoctor() {
   const [openNotfi, setopenNotfi] = useState(false);
   const [notifications, setNotifications] = useState([]);
   const [notifLoading, setNotifLoading] = useState(true);
+  const { user } = useContext(AuthContext);
 
-  
   useEffect(() => {
     const getImgDoc = async () => {
       setLoading(true)
@@ -74,19 +75,28 @@ export default function HeaderDoctor() {
           { path: '/doctor/DoctorCourses', label: 'Courses' },
           { path: '/doctor/DoctorGrades', label: 'Grades' },
           { path: '/doctor/DoctorAttendance', label: 'Attendance' },
-        ].map((item) => (
-          <li key={item.path} onClick={() => setMenuOpen(false)}>
-            <NavLink
-              end
-              to={item.path}
-              className={({ isActive }) => isActive ? 'activeLink' : ''}
-            >
-              <div className="linkText">{item.label}</div>
-              <div className="underline"></div>
-            </NavLink>
-          </li>
-        ))}
+        ]
+          .filter(item => {
+            if (item.label === 'Attendance') {
+              return user?.type === 'doctor';
+            }
+            return true;
+          })
+          .map((item) => (
+            <li key={item.path} onClick={() => setMenuOpen(false)}>
+              <NavLink
+                end
+                to={item.path}
+                className={({ isActive }) => isActive ? 'activeLink' : ''}
+              >
+                <div className="linkText">{item.label}</div>
+                <div className="underline"></div>
+              </NavLink>
+            </li>
+          ))
+        }
       </ul>
+
 
       {/* Right Side */}
       <div className="rightSide">

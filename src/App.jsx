@@ -25,6 +25,9 @@ import DoctorGrades from "./Doctorwebsite/DoctorGrades/DoctorGrades";
 import DoctorAttendance from "./Doctorwebsite/DoctorAttendance/DoctorAttendance";
 import PrfileDoc from "./Doctorwebsite/PrfileDoc/PrfileDoc";
 import SpecificCourse from "./Doctorwebsite/DoctorCourses/SpecificCourse";
+import DoctorOnlyRoute from "./Auth/AuthContext/DoctorOnlyRoute";
+import ContactUS from "./Doctorwebsite/ContactUS/ContactUS";
+import RatingWebSite from "./Doctorwebsite/RatingWebSite/RatingWebSite";
 
 function App() {
   return (
@@ -68,9 +71,18 @@ function App() {
           <Route index element={<DashDoc />} />
           <Route path="DoctorCourses" element={<DoctorCourses />} />
           <Route path="DoctorGrades" element={<DoctorGrades />} />
-          <Route path="DoctorAttendance" element={<DoctorAttendance />} />
+          <Route
+            path="DoctorAttendance"
+            element={
+              <DoctorOnlyRoute>
+                <DoctorAttendance />
+              </DoctorOnlyRoute>
+            }
+          />
           <Route path="your-profile" element={<PrfileDoc/>}/>
           <Route path="specific-course/:id" element={<SpecificCourse />}/>
+          <Route path="ContactUS" element={<ContactUS />}/>
+          <Route path="RatingWebsite" element={<RatingWebSite />}/>
         </Route>
       </Routes>
     </AuthProvider>
