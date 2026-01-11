@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getAttendanceStatsFun, getNumStudentCoursesFun } from '../../services/DoctorServices/dashServices';
+import {  getNumStudentCoursesFun } from '../../services/DoctorServices/dashServices';
 import SkeletonOverviewCard from '../../Components/SkeletonOverviewCard/SkeletonOverviewCard';
 import dashstudenticon from '../../assets/dashstudenticon.png'
 import dash3icon from '../../assets/dash3icon.png'

@@ -1,7 +1,7 @@
 import AttendanceCard from './AttendanceCard'
 import EnrollmentCard from './EnrollmentCard'
 import './Dashboard.css'
-import OverviewCard from './overviewCard'
+import OverviewCard from './OverviewCard'
 export default function Dashboard() {
   
   return (
