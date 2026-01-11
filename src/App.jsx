@@ -31,7 +31,7 @@ function App() {
     <AuthProvider>
       <Routes>
         {/* Login & Public Routes */}
-        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Login />} />
 
         {/* Admin Routes */}
         <Route path="/dashboard" element={

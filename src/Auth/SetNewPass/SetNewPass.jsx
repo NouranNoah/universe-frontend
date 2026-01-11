@@ -52,7 +52,7 @@ export default function SetNewPass() {
         console.log("newpass Done:", res.data);
         Cookies.set("Bearer", res.data.token);
 
-        Navigate('/login');
+        Navigate('/');
     } 
     catch (error) {
         setLoading(false);
