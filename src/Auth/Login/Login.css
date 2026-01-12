@@ -123,16 +123,10 @@
 form .login-options {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     margin-top: 10px;
 }
 
-.login-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px 0;
-}
+
 .logBox form .remember-box {
     display: flex;
     align-items: center;
@@ -209,6 +203,7 @@ form .login-options {
     .logBox{
         width: 100%;
         flex: none;
+        padding: 10% 1%;
     }
 
     .logo{

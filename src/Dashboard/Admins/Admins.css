@@ -380,7 +380,6 @@
   }
 
   .btns-group {
-    flex-direction: column;
     gap: 10px;
   }
 

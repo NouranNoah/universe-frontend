@@ -151,7 +151,7 @@ export default function Login() {
 
         <div className='contbox'>
             <p>Created By UniVerse Team</p>
-            <Link>Contact us</Link>
+            {/* <Link to='/ContactUS'>Contact us</Link> */}
         </div>
         </div>
       </div>

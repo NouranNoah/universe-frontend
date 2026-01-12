@@ -251,6 +251,24 @@
   border-color: #007bff;
 }
 
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.admin-info {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.admin-info img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 
 
 @media (max-width: 768px) {
@@ -280,7 +298,6 @@
   }
   .modal-boxs {
     width: 85%;
-    height: auto;
     padding: 20px;
   }
 
@@ -341,24 +358,30 @@
     height: 100%;
   }
   .modal-boxs input {
-    width: inherit;
+    width: -webkit-fill-available;
   }
-}
-td {
-  text-align: center;
-  vertical-align: middle;
-}
-
-.admin-info {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.admin-info img {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  object-fit: cover;
+  .modal-boxs .grid-form ,.modal-boxs .schedule-grid {
+        overflow: scroll;
+        height: 300px;
+    }
+    .deletemsg {
+        left: 0;
+    }
+    .modal-boxs .profileUser div {
+        flex-direction: column;
+    }
+    .modal-boxs form {
+        height: 450px;
+        overflow: scroll;
+    }
+    .profileUser{
+        height: 535px;
+        overflow: scroll;
+    }
+    .modal-boxs .profileUser .btns-group{
+        flex-direction: row;
+    }
+    .modal-boxs .profileUser .row1 label {
+        width: fit-content;
+    }
 }
