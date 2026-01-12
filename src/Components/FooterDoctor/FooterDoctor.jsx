@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import './FooterDoctor.css'
 import logo from '../../assets/logo.png';
-import { Link } from 'react-router-dom';
 import ContactUS from '../../Doctorwebsite/ContactUS/ContactUS';
 import RatingWebSite from '../../Doctorwebsite/RatingWebSite/RatingWebSite';
 

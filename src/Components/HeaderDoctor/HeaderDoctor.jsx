@@ -77,7 +77,7 @@ export default function HeaderDoctor() {
           { path: '/doctor/DoctorAttendance', label: 'Attendance' },
         ]
           .filter(item => {
-            if (item.label === 'Attendance') {
+            if (item.label === 'Grades') {
               return user?.type === 'doctor';
             }
             return true;

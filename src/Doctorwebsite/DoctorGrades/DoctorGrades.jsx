@@ -90,10 +90,10 @@ export default function DoctorGrades() {
 
       {/* Specific course content */}
       {selectedCourseId && (
-        <>
+        <div className='GradesComDat'>
           <Component courseId={selectedCourseId} onComponentsChange={refreshStudents}  />
           <DataCourse key={studentsKey}  courseId={selectedCourseId} />
-        </>
+        </div>
       )}
     </div>
   );

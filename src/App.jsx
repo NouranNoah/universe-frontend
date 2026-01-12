@@ -76,15 +76,15 @@ function App() {
         }>
           <Route index element={<DashDoc />} />
           <Route path="DoctorCourses" element={<DoctorCourses />} />
-          <Route path="DoctorGrades" element={<DoctorGrades />} />
           <Route
-            path="DoctorAttendance"
+            path="DoctorGrades"
             element={
               <DoctorOnlyRoute>
-                <DoctorAttendance />
+                <DoctorGrades />
               </DoctorOnlyRoute>
             }
           />
+          <Route path="DoctorAttendance" element={<DoctorAttendance />} />
           <Route path="your-profile" element={<PrfileDoc/>}/>
           <Route path="specific-course/:id" element={<SpecificCourse />}/>
           <Route path="ContactUS" element={<ContactUS />}/>

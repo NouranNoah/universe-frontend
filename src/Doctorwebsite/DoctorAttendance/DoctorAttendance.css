@@ -1,7 +1,9 @@
 /* ================= Container ================= */
 .attendanceContent {
+  display: flex;
+  flex-direction: column;
   padding: 20px;
-  
+  gap: 20px;
   border-radius: 24px;
   max-width: 1200px;
   margin: 0 auto;
@@ -129,16 +131,21 @@
 
 .dataAttend {
   display: flex;
-  justify-content: space-evenly;
-  gap: 10px;
+  align-items: center;
+  margin-left: 30%;
+  gap: 20px;
   flex-wrap: wrap;
+}
+.User-content{
+  background-color: #F7F9F9;
+  padding: 5% 2%;
 }
 
 /* ================= Chart ================= */
 .chart {
   position: relative;
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
   flex-shrink: 0;
 }
 
@@ -234,6 +241,9 @@
 }
 
 @media (max-width: 600px) {
+   .dataAttend {
+    margin-left: 0;
+   }
   .AttendanceHeader h3 {
     font-size: 18px;
   }

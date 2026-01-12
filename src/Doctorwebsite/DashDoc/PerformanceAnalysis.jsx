@@ -151,8 +151,8 @@ export default function PerformanceAnalysis({ numData }) {
               options={{ plugins: { legend: { display: false } } }}
             />
             <div className="studentStats">
-              <p><span style={{color:'#0079C8', fontWeight:'bold'}}>{dataPerformance.passedStudents}</span> Successful Students</p>
-              <p><span style={{color:'#D32F2F', fontWeight:'bold'}}>{dataPerformance.failedStudents}</span> Unsuccessful Students</p>
+              <p>Successful Students<br/><span style={{color:'#0079C8', fontWeight:'bold',fontSize:'22px'}}>{dataPerformance.passedStudents}</span></p>
+              <p>Unsuccessful Students<br/><span style={{color:'#D32F2F', fontWeight:'bold' ,fontSize:'22px'}}>{dataPerformance.failedStudents}</span> </p>
             </div>
           </div>
         )}
@@ -170,6 +170,7 @@ export default function PerformanceAnalysis({ numData }) {
               options={coursesOptions}
               plugins={[centerTextPlugin({
                 id: "coursesCenterText",
+                title: "Total",
                 value: `${numData.activeCourses?.count || 0}`,
                 valueSizeRatio: 0.5
               })]}

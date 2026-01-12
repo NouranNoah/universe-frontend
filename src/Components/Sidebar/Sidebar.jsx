@@ -10,14 +10,12 @@ import IconDepart from '../../assets/IconDepart.png';
 import IconNotif from '../../assets/IconNotfi.png';
 import IconReport from '../../assets/iconReport.png';
 import profileIcon from '../../assets/profileIcon.png';
-import Cookies from 'js-cookie';
 import { AuthContext } from '../../Auth/AuthContext/authContext';
 
 export default function Sidebar() {
     const location = useLocation();
-    const nameAdmin = Cookies.get('name');
+    const nameAdmin = localStorage.getItem('name');
     const [isMobileOpen, setIsMobileOpen] = useState(false);
-
 
     const [openUsers, setOpenUsers] = useState(false);
     const [openCourses, setOpenCourses] = useState(false);

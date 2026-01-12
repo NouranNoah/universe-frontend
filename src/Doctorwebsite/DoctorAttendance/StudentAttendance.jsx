@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import Pagination from '../../Components/Pagination/Pagination';
 import SkeletonTable from '../../Dashboard/SkeletonTable';
-
+import './DoctorAttendance.css'
 export default function StudentAttendance({lastAttendance}) {
   // ===== States =====
   const [searchTerm, setSearchTerm] = useState("");

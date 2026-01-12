@@ -6,13 +6,7 @@
     gap: 30px;
     margin: 16px 0;
 }
-.studentChartContainer{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
-  margin-top: 10%;
-}
+
 .total-boxsDoc .Total-box{
     width: 100%;
     display: flex;
@@ -139,7 +133,9 @@
     align-items: center;
     height: 430px;
 }
-
+.studentStats{
+  width: 100%;
+}
 .titlePerform {
     display: flex;
     flex-direction: row; 
@@ -179,9 +175,18 @@ h3 {
 }
 .coursesChartContainer {
   width: 100%;
-  max-width: 390px;
+  max-width: 420px;
   height: 320px;
   margin: auto;
+}
+.studentChartContainer {
+  width:fit-content;
+  height: 320px;
+  margin: auto;
+  display: flex;
+}
+.studentStats{
+  flex: 1;
 }
 
 /* ================= RESPONSIVE ================= */
@@ -303,6 +308,11 @@ h3 {
 @media (max-width: 480px) {
   .studentChartContainer{
     flex-direction: column;
+    width: 165px;
+  }
+  .studentStats {
+    font-size: 14px;
+    text-align: center;
   }
   .total-boxsDoc .Total-box {
     padding: 14px;

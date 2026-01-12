@@ -131,7 +131,7 @@ export default function SpecificCourse() {
                             <textarea value={courseData?.course?.description}></textarea>
                         </div>
 
-                        {/* <div className='lecturesContainer'>
+                        <div className='lecturesContainer'>
                             {
                                 courseData?.lectures?.length >= 4 ?(
                                     <div className='slideCardIcon'>
@@ -157,7 +157,7 @@ export default function SpecificCourse() {
                                 ))}
                                 </div>
                             )}
-                        </div> */}
+                        </div>
 
                         
                             <GetStudentCourse courseData={courseData} />
