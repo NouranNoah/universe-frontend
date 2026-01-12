@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import {  getNumStudentCoursesFun } from '../../services/DoctorServices/dashServices';
 import SkeletonOverviewCard from '../../Components/SkeletonOverviewCard/SkeletonOverviewCard';
 import dashstudenticon from '../../assets/dashstudenticon.png'
@@ -6,8 +6,10 @@ import dash3icon from '../../assets/dash3icon.png'
 import './DashDoc.css'
 import AttendanceStats from './AttendanceStats';
 import PerformanceAnalysis from './PerformanceAnalysis';
+import { AuthContext } from '../../Auth/AuthContext/authContext';
 
 export default function DashDoc() {
+  const { user } = useContext(AuthContext);
   const [numData , setNumData]= useState({
     activeCourses:{},
     totalStudents:{}
@@ -61,8 +63,10 @@ export default function DashDoc() {
   };
   
   useEffect(()=>{
-    getNumStudentCourse();
-  },[])
+    if (user) {
+      getNumStudentCourse();
+    }
+  },[user])
   
   return (
     <div className='dashDoc'>

@@ -1,11 +1,13 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState, useContext } from 'react';
 import SkeletonTable from '../SkeletonTable';
 import profileDefult from '../../assets/default-profile-picture.jpg';
 import Pagination from '../../Components/Pagination/Pagination';
 import { getEnrollmentListFun } from '../../services/dashboardAdmin';
+import { AuthContext } from '../../Auth/AuthContext/authContext';
 
 
 export default function EnrollmentCard() {
+    const { user } = useContext(AuthContext);
     const [EnrollmentList, setEnrollmentList] = useState({
         count: 0,
         data: []
@@ -58,8 +60,10 @@ export default function EnrollmentCard() {
     };
     
     useEffect(() => {
-        getEnrollmentList();
-    }, []);
+        if (user) {
+            getEnrollmentList();
+        }
+    }, [user]);
     
       /* Reset page when searching */
     useEffect(() => {

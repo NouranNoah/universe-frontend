@@ -71,7 +71,7 @@ export default function Login() {
           id: res.data.data._id
         });
         
-        
+        setLoading(false);
     } 
     catch (error) {
         setLoading(false);

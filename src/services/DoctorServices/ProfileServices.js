@@ -1,12 +1,8 @@
-import axios from "axios";
-import Cookies from "js-cookie";
+// src/services/doctorProfileService.js
+import axiosInstance from "../axiosInstance";
 
-const API = "https://uni-verse-rho.vercel.app/doctor";
-const token = Cookies.get("Bearer");
-
-export const getProfileDoctorFun =async()=>{
-    const res = await axios.get(`${API}/profile`,{
-        headers:{Authorization:token}
-    })
-    return res.data.data;
-}
+// ================= Get Doctor Profile =================
+export const getProfileDoctorFun = async () => {
+  const res = await axiosInstance.get("/doctor/profile");
+  return res.data.data;
+};

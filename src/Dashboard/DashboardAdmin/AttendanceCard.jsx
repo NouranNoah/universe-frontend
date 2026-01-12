@@ -1,10 +1,12 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState, useContext } from 'react';
 import { getAttendanceListFun } from '../../services/dashboardAdmin';
 import SkeletonTable from '../SkeletonTable';
 import profileDefult from '../../assets/default-profile-picture.jpg';
 import Pagination from '../../Components/Pagination/Pagination';
+import { AuthContext } from '../../Auth/AuthContext/authContext';
 
 export default function AttendanceCard() {
+  const { user } = useContext(AuthContext);
   const [attendanceList, setAttendanceList] = useState({
     count: 0,
     data: []
@@ -59,8 +61,10 @@ export default function AttendanceCard() {
   };
 
   useEffect(() => {
-    getAttendanceList();
-  }, []);
+    if (user) {
+      getAttendanceList();
+    }
+  }, [user]);
 
   /* Reset page when searching */
   useEffect(() => {

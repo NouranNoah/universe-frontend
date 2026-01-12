@@ -19,6 +19,7 @@ export default function PrfileDoc() {
     });
     const [loading,setLoading]= useState(false);
 
+    const { user } = useContext(AuthContext);
     const getDataDoc = async()=>{
         setLoading(true)
         try{
@@ -31,8 +32,10 @@ export default function PrfileDoc() {
         }
     }
     useEffect(()=>{
-        getDataDoc();
-    },[])
+        if (user) {
+            getDataDoc();
+        }
+    },[user])
 
     //logout
     const {logout} =  useContext(AuthContext);

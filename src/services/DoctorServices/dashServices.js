@@ -1,33 +1,20 @@
+// src/services/dashServices.js
+import axiosInstance from "../axiosInstance";
 
-import axios from "axios";
-import Cookies from "js-cookie";
+// ================= Dashboard Data =================
+export const getNumStudentCoursesFun = async () => {
+  const res = await axiosInstance.get("/doctor/dashboardStats");
+  return res.data.data;
+};
 
-const API = "https://uni-verse-rho.vercel.app/doctor";
-const token = Cookies.get("Bearer");
+// ================= Attendance Stats by Year/Month =================
+export const getAttendanceStatsFun = async () => {
+  const res = await axiosInstance.get("/doctor/attendanceStats");
+  return res.data.data;
+};
 
-export const getNumStudentCoursesFun = async()=>{
-    const res = await axios.get(`${API}/dashboardStats`,{
-        headers:{
-            Authorization:token
-        }
-    })
-    return res.data.data;
-}
-//attendance stats by year and month
-export const getAttendanceStatsFun = async()=>{
-    const res = await axios.get(`${API}/attendanceStats`,{
-        headers:{
-            Authorization:token
-        }
-    })
-    return res.data.data;
-}
-//Attendance statistics
-export const getStudentsStatisticsFun = async()=>{
-    const res = await axios.get(`${API}/studentsStatistics`,{
-        headers:{
-            Authorization:token
-        }
-    })
-    return res.data.data;
-}
+// ================= Students Performance Statistics =================
+export const getStudentsStatisticsFun = async () => {
+  const res = await axiosInstance.get("/doctor/studentsStatistics");
+  return res.data.data;
+};

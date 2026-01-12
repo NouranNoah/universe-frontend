@@ -5,6 +5,9 @@ import AddAdmin from './AddAdmin';
 import ProfileModal from './ProfileModal';
 import { getAdmins } from '../../services/adminService';
 import SkeletonTable from '../SkeletonTable';
+import { useContext } from 'react';
+import { AuthContext } from '../../Auth/AuthContext/authContext';
+
 
 
 export default function Admins() {
@@ -15,8 +18,7 @@ export default function Admins() {
     const [adminId,setAdminId] =useState('')
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
-
+    const { user } = useContext(AuthContext);
     
     const getAdmin = async()=>{
         setLoading(true);
@@ -31,9 +33,12 @@ export default function Admins() {
         } 
     }
 
+    
     useEffect(()=>{
-    getAdmin();
-    },[])
+        if(!user) return;
+        getAdmin();
+    },[user])
+
 
     
     const filteredAdmins = useMemo(()=>{

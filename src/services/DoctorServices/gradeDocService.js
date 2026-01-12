@@ -1,72 +1,48 @@
-import axios from "axios";
-import Cookies from "js-cookie";
+// src/services/gradeDocService.js
+import axiosInstance from "../axiosInstance";
 
-const API = "https://uni-verse-rho.vercel.app/doctor/grade";
-const getAuthHeaders = () => ({
-    Authorization: Cookies.get("Bearer")
-});
+const API = "/doctor/grade";
 
+// ================= My Courses =================
+export const getMyCoursesFun = async () => {
+  const res = await axiosInstance.get(`${API}/courses`);
+  return res.data.courses;
+};
 
-//get my courses
-export const getMyCoursesFun = async()=>{
-    const res =await axios.get(`${API}/courses`,{
-        headers: getAuthHeaders()
-    })
-    return res.data.courses
-}
+// ================= Components =================
+export const addComponentFun = async (courseId, component) => {
+  const res = await axiosInstance.post(`${API}/${courseId}/component`, component);
+  return res.data;
+};
 
-//add component
-export const addComponentFun = async(courseId,component)=>{
-    const res =await axios.post(`${API}/${courseId}/component`,component,{
-        headers: getAuthHeaders()
-    })
-    return res.data
-}
+export const getComponentOfCourseFun = async (courseId) => {
+  const res = await axiosInstance.get(`${API}/courses/${courseId}/component`);
+  return res.data.data;
+};
 
-//get component of course
-export const getComponentOfCourseFun = async(courseId)=>{
-    const res =await axios.get(`${API}/courses/${courseId}/component`,{
-        headers: getAuthHeaders()
-    })
-    return res.data.data
-}
-//update specific component
-export const updateSpecificComponentFun = async(courseId,componentId,component)=>{
-    const res =await axios.put(`${API}/${courseId}/component/${componentId}`,component,{
-        headers: getAuthHeaders()
-    })
-    return res.data
-}
-//delete specific component
-export const deleteSpecificComponentFun = async(courseId,componentId)=>{
-    const res =await axios.delete(`${API}/${courseId}/component/${componentId}`,{
-        headers: getAuthHeaders()
-    })
-    return res.data
-}
+export const updateSpecificComponentFun = async (courseId, componentId, component) => {
+  const res = await axiosInstance.put(`${API}/${courseId}/component/${componentId}`, component);
+  return res.data;
+};
 
+export const deleteSpecificComponentFun = async (courseId, componentId) => {
+  const res = await axiosInstance.delete(`${API}/${courseId}/component/${componentId}`);
+  return res.data;
+};
 
+// ================= Students =================
+export const getStudentofCourseFun = async (courseId) => {
+  const res = await axiosInstance.get(`${API}/courses/${courseId}/students`);
+  return res.data;
+};
 
-//get student of course
-export const getStudentofCourseFun = async(courseId)=>{
-    const res =await axios.get(`${API}/courses/${courseId}/students`,{
-        headers: getAuthHeaders()
-    })
-    return res.data
-}
+export const updateGradesofStudentFun = async (courseId, studentId, component) => {
+  const res = await axiosInstance.put(`${API}/courses/${courseId}/students/${studentId}`, component);
+  return res.data;
+};
 
-//update grades of student
-export const updateGradesofStudentFun = async(courseId,studentId,component)=>{
-    const res =await axios.put(`${API}/courses/${courseId}/students/${studentId}`,component,{
-        headers: getAuthHeaders()
-    })
-    return res.data
-}
-
-//put finalize results
-export const finalizeResultsFun = async(courseId)=>{
-    const res =await axios.put(`${API}/finalizeResults`,{courseId},{
-        headers: getAuthHeaders(),
-    })
-    return res.data
-}
+// ================= Finalize =================
+export const finalizeResultsFun = async (courseId) => {
+  const res = await axiosInstance.put(`${API}/finalizeResults`, { courseId });
+  return res.data;
+};

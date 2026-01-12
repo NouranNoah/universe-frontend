@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import './Profile.css'
 import profileDefault from '../../assets/default-profile-picture.jpg'
 import { getProfilefun } from '../../services/adminService'
@@ -6,9 +6,11 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import EditProfile from './EditProfile';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Auth/AuthContext/authContext';
 
 
 export default function Profile() {
+    const { user } = useContext(AuthContext);
     const [dataProfile, setDataProfile] =useState({
         email:"",
         name: '',
@@ -32,8 +34,10 @@ export default function Profile() {
         }
     }
     useEffect(()=>{
-        getProfileAdmin();
-    },[])
+        if (user) {
+            getProfileAdmin();
+        }
+    },[user])
     const ProfileSkeleton = () => (
         <div className="profileUser">
             <div style={{ display: 'flex', gap: '20px' }}>

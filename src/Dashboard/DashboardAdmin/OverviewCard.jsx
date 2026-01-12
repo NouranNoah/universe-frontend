@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import dashstudenticon from '../../assets/dashstudenticon.png'
 import dashinsicon from '../../assets/dashinstructoricon.png'
 import dash3icon from '../../assets/dash3icon.png'
 import dashdeparticon from '../../assets/dashdeparticon.png'
 import { getoverviewDashFun } from '../../services/dashboardAdmin'
 import SkeletonOverviewCard from '../../Components/SkeletonOverviewCard/SkeletonOverviewCard'
+import { AuthContext } from '../../Auth/AuthContext/authContext'
 
 export default function OverviewCard() {
-
+      const { user } = useContext(AuthContext);
       const [dataDash , setDataDash] = useState({
           students:{
             count:0,
@@ -43,8 +44,10 @@ export default function OverviewCard() {
       }
     
       useEffect(()=>{
-        getDataDash();
-      },[])
+        if (user) {
+          getDataDash();
+        }
+      },[user])
 
       //for color
       const getChangeClass = (change) => {
