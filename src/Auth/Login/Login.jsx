@@ -4,7 +4,6 @@ import imglog from '../../assets/loginImg.png'
 import { Link, useNavigate } from "react-router-dom";
 import logo from '../../assets/logo.png'
 import axios from "axios";
-import Cookies from "js-cookie";
 import { AuthContext } from "../../Auth/AuthContext/authContext";
 
 export default function Login() {
@@ -72,9 +71,7 @@ export default function Login() {
           id: res.data.data._id
         });
         
-        if(res.data.data.role === "admin") Navigate("/dashboard/dashboardAdmin");
-        else if(res.data.data.role === "professor") Navigate("/doctor");
-        else if(res.data.data.role === "student") Navigate("/student");
+        
     } 
     catch (error) {
         setLoading(false);
@@ -87,7 +84,18 @@ export default function Login() {
         }
     }
 }
-  
+  useEffect(() => {
+  if (!user) return;
+
+  if (user.role === "admin") {
+    Navigate("/dashboard/dashboardAdmin");
+  } else if (user.role === "professor") {
+    Navigate("/doctor");
+  } else if (user.role === "student") {
+    Navigate("/student");
+  }
+}, [user]);
+
 
   return (
     <div className='login-container'>

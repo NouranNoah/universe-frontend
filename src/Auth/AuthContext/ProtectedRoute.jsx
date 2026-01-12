@@ -6,7 +6,7 @@ export default function ProtectedRoute({ children, allowedRoles }) {
   const { user, loading } = useContext(AuthContext);
 
   if (loading) {
-    return <div>Loading...</div>; 
+    return <div>Loading...</div>; // أو spinner
   }
 
   if (!user) {
