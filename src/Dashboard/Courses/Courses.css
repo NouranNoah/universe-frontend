@@ -223,8 +223,8 @@
 }
 
 @media (max-width: 768px) {
-  .grid-form {
-    grid-template-columns: 1fr;
+  .modal-boxs .grid-form {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 

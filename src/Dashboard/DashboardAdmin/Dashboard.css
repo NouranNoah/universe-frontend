@@ -120,6 +120,11 @@
 /* ================= Mobile ================= */
 @media (max-width: 576px){
     
+    .dashboard-content {
+        width: 90%;
+        margin: 0;
+        height: 100vh;
+    }
     .dashboardAdmin-container{
         height: auto;
         overflow-y: visible;

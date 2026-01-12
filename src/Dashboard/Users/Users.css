@@ -279,7 +279,7 @@
     padding: 6px 8px;
   }
   .modal-boxs {
-    width: 90%;
+    width: 85%;
     height: auto;
     padding: 20px;
   }
@@ -296,31 +296,53 @@
   .modal-boxs form div {
     flex-direction: column;
     align-items: flex-start;
+    width: -webkit-fill-available;
   }
-
+  /*  */
   .row2 .box1, .row2 .box2 {
     flex-direction: column;
     gap: 10px;
   }
+  .modal-box form .btns-group,.modal-boxs form .btns-group{
+    flex-direction: row;
+  }
+  .modal-boxs .row2 .box1{
+    flex-direction: column;
+  }
   .row2 select {
     padding: 10px 12px;
   }
-  .modal-boxs {
-    width: 90%;
-    padding: 20px;
-    height: auto;
+  .btns-group .right-btnnot {
+    margin-left: 0;
   }
+
 
   .modal-boxs form div {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .modal-boxs form label {
+  .modal-boxs form .row1 label ,.modal-boxs form .row2 label{
     width: 100%;
     margin-bottom: 5px;
+    top: 18px;
   }
-
+  .modal-boxs .phone input {
+    padding-left: 20%;
+  }
+  .chips {
+    margin-left: 20%;
+  }
+  .form-group .prereq-container select {
+    width:inherit;
+  }
+  .row1 .imguser img {
+    width: 100%;
+    height: 100%;
+  }
+  .modal-boxs input {
+    width: inherit;
+  }
 }
 td {
   text-align: center;

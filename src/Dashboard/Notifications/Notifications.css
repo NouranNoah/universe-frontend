@@ -76,3 +76,17 @@ input[readonly] {
   background-color: #bdcddc4a;
   color: #667085;
 }
+
+@media (max-width: 768px) {
+  .modal-box form .notiLab .chips {
+    margin-left: 4%;
+    margin-right: 2%;
+  }
+.modal-box form .prereq-container{
+  flex-direction: row;
+  align-items: end;
+}
+.modal-box form select{
+  width: auto;
+}
+}

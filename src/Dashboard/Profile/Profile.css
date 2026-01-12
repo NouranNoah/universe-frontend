@@ -115,8 +115,8 @@
     width: 100%;
   }
 
-  .btns-group {
-    flex-direction: column;
+  .ProfileAdminContent .btns-group {
+    flex-direction: row;
     gap: 10px;
   }
 

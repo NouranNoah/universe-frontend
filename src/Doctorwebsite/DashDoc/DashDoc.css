@@ -6,6 +6,13 @@
     gap: 30px;
     margin: 16px 0;
 }
+.studentChartContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10%;
+}
 .total-boxsDoc .Total-box{
     width: 100%;
     display: flex;
@@ -161,7 +168,12 @@ h3 {
     width: 400px;
     height: 300px;
 }
-.studentChartContainer canvas{
+.studentChartContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+} canvas{
   width: 250px;
   height: 200px;
 }
@@ -289,7 +301,9 @@ h3 {
 
 /* ===== Small Mobile (<= 480px) ===== */
 @media (max-width: 480px) {
-
+  .studentChartContainer{
+    flex-direction: column;
+  }
   .total-boxsDoc .Total-box {
     padding: 14px;
   }
