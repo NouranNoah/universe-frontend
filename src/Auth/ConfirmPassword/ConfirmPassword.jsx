@@ -125,7 +125,7 @@ export default function ConfirmPassword() {
 
                     <div className='contbox'>
                         <p>Created By UniVerse Team</p>
-                        <Link>Contact us</Link>
+                        
                     </div>
                 </div>
             </div>

@@ -3,6 +3,9 @@ import { AuthProvider } from "./Auth/AuthContext/authContext";
 import ProtectedRoute from "./Auth/AuthContext/ProtectedRoute";
 
 import Login from "./Auth/Login/Login";
+import ForgotPassword from './Auth/ForgotPassword/ForgotPassword'
+import ConfirmPassword from './Auth/ConfirmPassword/ConfirmPassword'
+import SetNewPass from './Auth/SetNewPass/SetNewPass'
 import DashboardLayout from "./Components/DashboardLayout/DashboardLayout";
 import Dashboard from "./Dashboard/DashboardAdmin/Dashboard";
 import Courses from "./Dashboard/Courses/Courses";
@@ -35,7 +38,10 @@ function App() {
       <Routes>
         {/* Login & Public Routes */}
         <Route path="/" element={<Login />} />
-
+        <Route path="/ForgotPassword" element={<ForgotPassword />}/>
+        <Route path="/ConfirmPassword" element={<ConfirmPassword />}/>
+        <Route path="/ForgotPassword" element={<ForgotPassword />}/>
+        <Route path="/SetNewPass" element={<SetNewPass />}/>
         {/* Admin Routes */}
         <Route path="/dashboard" element={
           <ProtectedRoute allowedRoles={["admin"]}>
