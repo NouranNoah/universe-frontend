@@ -6,6 +6,9 @@ import { getStudentsStatisticsFun } from '../../services/DoctorServices/dashServ
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export default function PerformanceAnalysis({ numData }) {
+  const [totalCourses, setTotalCourses] = useState(0);
+
+  
   const [dataPerformance, setDataPerformance] = useState({
     successRate: '0%',
     passedStudents: 0,
@@ -125,6 +128,11 @@ export default function PerformanceAnalysis({ numData }) {
   };
 
 
+  useEffect(() => {
+  if (numData?.activeCourses?.count != null) {
+    setTotalCourses(numData.activeCourses.count);
+  }
+}, [numData]);
 
 
 
@@ -171,7 +179,7 @@ export default function PerformanceAnalysis({ numData }) {
               plugins={[centerTextPlugin({
                 id: "coursesCenterText",
                 title: "Total",
-                value: `${numData.activeCourses?.count || 0}`,
+                value: totalCourses,
                 valueSizeRatio: 0.5
               })]}
             />
