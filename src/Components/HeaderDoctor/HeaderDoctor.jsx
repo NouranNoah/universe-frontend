@@ -7,49 +7,41 @@ import profileDefult from '../../assets/default-profile-picture.jpg';
 import NotificationDoc from '../../Doctorwebsite/NotificationDoc/NotificationDoc';
 import { getNotificationsFun } from '../../services/DoctorServices/notification';
 import { AuthContext } from '../../Auth/AuthContext/authContext';
+import NotificationModal from '../../Doctorwebsite/NotificationDoc/NotificationModal';
 
 export default function HeaderDoctor() {
-  const [imgDoc, setImgDoc] = useState('');
+  const [imgDoc, setImgDoc] = useState(profileDefult);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [loading, setLoading] = useState(false);
   const [openNotfi, setopenNotfi] = useState(false);
   const [notifications, setNotifications] = useState([]);
-  const [notifLoading, setNotifLoading] = useState(true);
+  const [showNotiModal, setShowNotiModal] = useState(false);
+  const [selectedNoti, setSelectedNoti] = useState(null);
+
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
     const getImgDoc = async () => {
-      setLoading(true)
       try {
-        const res = await getProfileDoctorFun(); 
-        setImgDoc(res.profileImage);
-      } catch(err) {
-        console.log('failed to get profile image!');
+        const res = await getProfileDoctorFun();
+        setImgDoc(res.profileImage || profileDefult);
+      } catch {
         setImgDoc(profileDefult);
-      } finally {
-        setLoading(false)
       }
-    }
+    };
     getImgDoc();
-  }, [])
+  }, []);
 
-  
   useEffect(() => {
     const fetchNotifi = async () => {
-      setNotifLoading(true);
       try {
         const data = await getNotificationsFun();
-        console.log(data);
-        
         setNotifications(data);
       } catch (err) {
         console.log(err);
-      } finally {
-        setNotifLoading(false);
       }
-    }
+    };
     fetchNotifi();
-  }, []); 
+  }, []);
 
   const unreadCount = notifications.filter(n => !n.isRead).length;
 
@@ -61,11 +53,9 @@ export default function HeaderDoctor() {
         <p>UniVerse</p>
       </div>
 
-      {/* Hamburger Icon */}
+      {/* Hamburger */}
       <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </div>
 
       {/* Nav */}
@@ -76,13 +66,8 @@ export default function HeaderDoctor() {
           { path: '/doctor/DoctorGrades', label: 'Grades' },
           { path: '/doctor/DoctorAttendance', label: 'Attendance' },
         ]
-          .filter(item => {
-            if (item.label === 'Grades') {
-              return user?.type === 'doctor';
-            }
-            return true;
-          })
-          .map((item) => (
+          .filter(item => item.label !== 'Grades' || user?.type === 'doctor')
+          .map(item => (
             <li key={item.path} onClick={() => setMenuOpen(false)}>
               <NavLink
                 end
@@ -93,35 +78,42 @@ export default function HeaderDoctor() {
                 <div className="underline"></div>
               </NavLink>
             </li>
-          ))
-        }
+          ))}
       </ul>
-
 
       {/* Right Side */}
       <div className="rightSide">
         <div className="notif" onClick={() => setopenNotfi(!openNotfi)}>
-            <i className="fa-solid fa-bell"></i>
-            {unreadCount > 0 && <div className='num-of-notif'>{unreadCount}</div>}
-            {openNotfi && (
-                <NotificationDoc 
-                onClose={() => setopenNotfi(false)} 
-                notifications={notifications} 
-                setNotifications={setNotifications} 
-                />
-            )}
+          <i className="NotiIcon fa-solid fa-bell"></i>
+          {unreadCount > 0 && <div className='num-of-notif'>{unreadCount}</div>}
+
+          {openNotfi && (
+            <NotificationDoc
+              onClose={() => setopenNotfi(false)}
+              notifications={notifications}
+              setNotifications={setNotifications}
+              onSelect={(notif) => {
+                setSelectedNoti(notif);
+                setShowNotiModal(true);
+                setopenNotfi(false);
+              }}
+            />
+          )}
         </div>
 
-        {loading ? (
-          <div className="profile-loading"></div>
-        ) : (
-          <NavLink to='/doctor/your-profile'>
-            <img className="profile-img" src={imgDoc} alt="Profile-img" />
-          </NavLink>
+        <NavLink to='/doctor/your-profile'>
+          <img className="profile-img" src={imgDoc} alt="Profile" />
+        </NavLink>
+
+        {showNotiModal && (
+          <div className="modal-overlay">
+            <NotificationModal
+              data={selectedNoti}
+              onClose={() => setShowNotiModal(false)}
+            />
+          </div>
         )}
-
       </div>
-
     </div>
   );
 }

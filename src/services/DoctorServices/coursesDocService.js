@@ -14,7 +14,13 @@ export const getDocCourseFun = async (id) => {
 
 // ================= Notifications =================
 export const sendDocCourseNotfiFun = async (id, notfi) => {
-  const res = await axiosInstance.post(`/doctor/course/${id}/notification`, { notfi });
+  // إرسال البيانات مباشرة - الـ API يتوقع { title, subject } وليس { notfi: {...} }
+  const notificationPayload = {
+    title: notfi.title || notfi.subject || "Notification",
+    subject: notfi.subject
+  };
+  
+  const res = await axiosInstance.post(`/doctor/course/${id}/notification`, notificationPayload);
   return res.data;
 };
 

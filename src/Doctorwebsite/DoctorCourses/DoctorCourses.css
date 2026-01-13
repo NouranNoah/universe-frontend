@@ -323,7 +323,9 @@
 
 
 
-
+.success{
+  text-align: center;
+}
 
 
 
@@ -418,6 +420,7 @@
 .lecturesContainer {
     display: flex;
     width:100%;
+    max-width: 785px;
     gap: 1rem;
     padding: 1rem 0;
     position: relative;
@@ -441,6 +444,7 @@
 
 .lectureCard {
     position: relative;
+    max-width: 200px;
     flex: 0 0 25%;
     scroll-snap-align: center;
     overflow: hidden;
@@ -624,7 +628,7 @@
 
 .lecture-popup {
   position: absolute;
-  top: 50px; /* ممكن تعدلي حسب حجم الكاليندر */
+  top: 50px; 
   left: 50%;
   transform: translateX(-50%);
   background: #F7F9F9;

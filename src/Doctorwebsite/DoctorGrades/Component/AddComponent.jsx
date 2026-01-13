@@ -88,7 +88,7 @@ export default function AddComponent({ courseId, setShowAddModal, getComponent }
             <form onSubmit={handleSubmit}>
             {/* NAME */}
             <div className="notiLab">
-                <label>Name</label>
+                <label>Name :</label>
                 <input
                 type="text"
                 name="name"
@@ -100,7 +100,7 @@ export default function AddComponent({ courseId, setShowAddModal, getComponent }
 
             {/* PERCENTAGE */}
             <div className="notiLab">
-                <label>Percentage</label>
+                <label>Percentage:</label>
                 <input
                 type="number"
                 name="percentage"

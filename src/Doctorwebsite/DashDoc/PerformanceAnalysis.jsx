@@ -6,7 +6,9 @@ import { getStudentsStatisticsFun } from '../../services/DoctorServices/dashServ
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export default function PerformanceAnalysis({ numData }) {
-  const [totalCourses, setTotalCourses] = useState(0);
+  const [totalCourses, setTotalCourses] = useState(
+  numData?.activeCourses?.count ?? 0
+);
 
   
   const [dataPerformance, setDataPerformance] = useState({
@@ -14,6 +16,7 @@ export default function PerformanceAnalysis({ numData }) {
     passedStudents: 0,
     failedStudents: 0,
   });
+  
   const [coursesOverview, setCoursesOverview] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -32,9 +35,7 @@ export default function PerformanceAnalysis({ numData }) {
       setCoursesOverview(data.studentsByLevel || []);
     } catch (err) {
       console.error(err);
-    } finally {
-      setLoading(false);
-    }
+    } 
   };
 
   useEffect(() => {
@@ -129,10 +130,13 @@ export default function PerformanceAnalysis({ numData }) {
 
 
   useEffect(() => {
+    setLoading(true);
   if (numData?.activeCourses?.count != null) {
     setTotalCourses(numData.activeCourses.count);
-  }
+    setLoading(false)
+  } 
 }, [numData]);
+
 
 
 

@@ -146,12 +146,14 @@
   line-height: 100%;
   letter-spacing: 1.5%;
 }
-
+.comp .modal-box form input{
+  padding-left: 16%;
+}
 /* ================= Actions ================= */
 .card-actions {
   display: flex;
   gap: 12px;
-  flex-wrap: wrap; /* يلتف لو الشاشة ضيقت */
+  flex-wrap: wrap; 
 }
 
 .components-wrapper .btn-add:hover {
@@ -201,7 +203,7 @@
   .card-header .percentage {
     font-size: 20px;
   }
-
+  
   .card-actions {
     justify-content: flex-start;
   }

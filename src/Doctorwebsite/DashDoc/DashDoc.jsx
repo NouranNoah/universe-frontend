@@ -7,6 +7,8 @@ import './DashDoc.css'
 import AttendanceStats from './AttendanceStats';
 import PerformanceAnalysis from './PerformanceAnalysis';
 import { AuthContext } from '../../Auth/AuthContext/authContext';
+import Cookies from "js-cookie";
+
 
 export default function DashDoc() {
   const { user } = useContext(AuthContext);
@@ -14,6 +16,8 @@ export default function DashDoc() {
     activeCourses:{},
     totalStudents:{}
   })
+  const token = Cookies.get("Bearer");
+  console.log(token);
 
 
   const [loading , setLoading]= useState(false);

@@ -3,6 +3,7 @@ import SkeletonTable from '../../SkeletonTable';
 import profileDefault from '../../../assets/default-profile-picture.jpg';
 import Pagination from '../../../Components/Pagination/Pagination';
 import { getAllComplaintFun } from '../../../services/reportService';
+import ReplyComplaint from '../Complaintreports/ReplyComplaint'
 
 export default function ComplaintReports() {
   const [ComplaintData, setComplaintData] = useState({
@@ -12,10 +13,13 @@ export default function ComplaintReports() {
 
   const [activeFilter, setActiveFilter] = useState('student');
   const [loading, setLoading] = useState(true);
-  const [compId,setcompId] =useState('')
   const [errmsg, setErrmsg] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const[showDeleteCon ,setShowDeleteCon] =useState(false);
+  const[ShowModal ,setShowModal] =useState(false);
+  const[Idcomp ,setIdcomp] =useState('');
+  const[Usercomp ,setUsercomp] =useState('');
+  const[nameRevice ,setNameRevice] =useState('');
+
   
 
   const reportsPerPage = 4;
@@ -92,7 +96,11 @@ export default function ComplaintReports() {
             <SkeletonTable rows={4} columns={3} />
           ) : currentReports.length > 0 ? (
             currentReports.map(comp => (
-              <tr key={comp._id}>
+              <tr key={comp._id} onClick={()=>{
+                setShowModal(true)
+                setUsercomp(comp.user._id)
+                setNameRevice(comp.user?.name)
+                }}>
                 <td style={{textAlign:'start'}}>{comp.createdAt.split('T')[0]}</td>
                 <td>
                   <div className="course-infor">
@@ -122,21 +130,17 @@ export default function ComplaintReports() {
         onPageChange={setCurrentPage}
         maxVisiblePages={3}
       />
-        {/* {
-            showDeleteCon && (
-                <div className='deletemsg'>
-                    <p>Are You sure you want to delete complaint?</p>
-                    <div>
-                        <button className="left-btn" onClick={()=>{
-                            deletComplaint()
-                            setShowProfileModal(false)
-                        }
-                        }>Delete</button>
-                        <button className="right-btn" onClick={()=> setShowDeleteCon(false)}>Cancle</button>
-                    </div>
-                </div>
-            )
-        } */}
+        {
+          ShowModal && (
+              <div className="modal-overlay">
+                  <ReplyComplaint
+                      setShowModal={setShowModal}
+                      Usercomp={Usercomp}
+                      nameRevice={nameRevice}
+                  />
+              </div>
+          )
+        }
 
         
     </div>

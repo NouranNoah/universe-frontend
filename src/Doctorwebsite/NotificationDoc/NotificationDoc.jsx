@@ -1,17 +1,17 @@
-import React, { useEffect } from 'react';
 import './NotificationDoc.css';
-import { NavLink } from 'react-router-dom';
 import { readNotificationFun } from '../../services/DoctorServices/notification';
 
-export default function NotificationDoc({ onClose, notifications, setNotifications }) {
+export default function NotificationDoc({ onSelect, onClose, notifications, setNotifications }) {
 
-  
   const handleRead = async (id) => {
     try {
       await readNotificationFun(id);
-      
-      setNotifications(prev => prev.map(n => n.id === id ? { ...n, read: true } : n));
-      onClose(); 
+
+      setNotifications(prev =>
+        prev.map(n =>
+          n._id === id ? { ...n, isRead: true } : n
+        )
+      );
     } catch (err) {
       console.log(err);
     }
@@ -29,22 +29,21 @@ export default function NotificationDoc({ onClose, notifications, setNotificatio
           <p className="noNotif">No notifications yet.</p>
         ) : (
           notifications.map((notif) => (
-            <div 
-              key={notif.id} 
-              className={`notifItem ${notif.read ? 'read' : 'unread'}`}
-              onClick={() => handleRead(notif.id)}
+            <div
+              key={notif._id}
+              className={`notifItem ${notif.isRead ? 'read' : 'unread'}`}
+              onClick={() => {
+                handleRead(notif._id);
+                onSelect(notif);
+              }}
             >
               <p className="notifTitle">{notif.title}</p>
-              <span className="notifTime">{notif.time}</span>
+              <span className="notifTime">
+                {notif.createdAt.split("T")[0]}
+              </span>
             </div>
           ))
         )}
-      </div>
-
-      <div className="notifFooter">
-        <NavLink to="/doctor/notifications" onClick={onClose} className="seeAll">
-          See All Notifications
-        </NavLink>
       </div>
     </div>
   );

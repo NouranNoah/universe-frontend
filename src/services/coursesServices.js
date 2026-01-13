@@ -14,12 +14,7 @@ export const getCourseFun = async (id)=>{
     return res.data.subject;
 }
 export const addCoursesFun = async (form)=>{
-    const res = await axiosInstance.post(`${API}/course`,form,
-    {
-      headers: {
-        "Content-Type": "multipart/form-data"
-      }
-    })
+    const res = await axiosInstance.post(`${API}/course`,form)
     return res.data;
 }
 export const editStatueCoursesFun = async (id)=>{

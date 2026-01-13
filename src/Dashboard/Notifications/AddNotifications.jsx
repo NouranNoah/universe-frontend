@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { sendNotificationFun } from "../../services/notificationsService";
-import Cookies from "js-cookie";
+
 
 export default function AddNotifications({ setShowAddModal, getNotif }) {
   const [errormsg, setErrormsg] = useState("");
@@ -11,7 +11,7 @@ export default function AddNotifications({ setShowAddModal, getNotif }) {
     sendTo: ""
   });
   
-  const nameUser = Cookies.get("name");
+  const nameUser = localStorage.getItem("name");
   const today = new Date().toLocaleDateString("en-GB"); //26/12/2025
 
   const handleChange = (e) => {

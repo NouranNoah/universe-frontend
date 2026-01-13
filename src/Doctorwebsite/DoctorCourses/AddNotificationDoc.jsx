@@ -1,17 +1,16 @@
 import React, { useState } from 'react'
-import Cookies from "js-cookie";
 import { sendDocCourseNotfiFun } from '../../services/DoctorServices/coursesDocService';
 
 export default function AddNotificationDoc({setShowAddModal ,courseId}) {
     const [errormsg, setErrormsg] = useState("");
     const [loading, setLoading] = useState(false);
-    
+    const [sendedDone,setSendedDone] = useState(false);
     const [form, setForm] = useState({
         title:"",
         subject: ""
     });
     
-    const nameUser = Cookies.get("name");
+    const nameUser = localStorage.getItem("name");
     const today = new Date().toLocaleDateString("en-GB"); //26/12/2025
     
     const handleChange = (e) => {
@@ -30,27 +29,44 @@ export default function AddNotificationDoc({setShowAddModal ,courseId}) {
         setErrormsg("");
     };
     
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!form.subject.trim()) {
         setErrormsg("Please fill the Subject ,required field");
         return;
         }
-    
+
         setLoading(true);
         setErrormsg("");
-    
+        
         try {
-        await sendDocCourseNotfiFun(courseId,{
-            title: form.title,
+        const notificationData = {
+            title: form.title || form.subject,
             subject: form.subject
-        });
-    
-        setShowAddModal(false);
+        };
+        
+        await sendDocCourseNotfiFun(courseId, notificationData);
+        setSendedDone(true)
         } catch (err) {
-        setErrormsg(
-            err.response?.data?.msg || "Failed to send notification"
-        );
+        // معالجة الأخطاء
+        let errorMessage = "Failed to send notification";
+        
+        if (err.response) {
+            const status = err.response.status;
+            const data = err.response.data;
+            
+            errorMessage = data?.msg || 
+                          data?.message || 
+                          data?.error ||
+                          `Server error: ${status}`;
+        } else if (err.request) {
+            errorMessage = "Network error. Please check your connection.";
+        } else {
+            errorMessage = err.message || "An error occurred while sending notification";
+        }
+        
+        setErrormsg(errorMessage);
         } finally {
         setLoading(false);
         }
@@ -67,6 +83,7 @@ export default function AddNotificationDoc({setShowAddModal ,courseId}) {
 
         <h3>Add New Notification</h3>
         {errormsg && <p className="error">{errormsg}</p>}
+        {sendedDone && <p className="success">Notification sent successfully <i class="fa-solid fa-circle-check"></i></p>}
 
         <form onSubmit={handleSubmit}>
             {/* User + Date */}

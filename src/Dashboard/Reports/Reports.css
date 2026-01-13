@@ -37,3 +37,8 @@
 .delRep:hover{
     color: rgb(194, 0, 0);
 }
+.success{
+    color: green;
+    font-size: 14px;
+    font-weight: 600;
+}

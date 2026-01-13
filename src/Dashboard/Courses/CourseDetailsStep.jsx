@@ -107,6 +107,8 @@ export default function CourseDetailsStep({form , setForm,departments,instructor
                 <option key={dep._id} value={dep.name}>{dep.name}</option>
                 ))}
             </select>
+            
+
         </div>
 
         <div className="form-group">

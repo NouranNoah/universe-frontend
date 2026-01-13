@@ -84,3 +84,91 @@
 .seeAll:hover {
   text-decoration: underline;
 }
+
+.NotfiGet{
+  height: 235px;
+}
+.NotfiGet label{
+  top: 24px;
+  font-size: 14px;
+}
+.NotfiGet input{
+  width:-webkit-fill-available;
+  padding: 14px 16px;
+  margin: 13px 0;
+  border: 1px solid #5555554e;
+  border-radius: 8px;
+  color: #555555;
+  font-size: 14px;
+  padding-left: 12%;
+}
+.NotfiGet .notiLab {
+  width: 100%;
+}
+
+/* ================= Responsive Notification Dropdown ================= */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .notificationDropdown {
+    width: 280px;
+    right: 10px;
+    top: 55px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .notificationDropdown {
+    position: fixed;          /* مهم */
+    top: 70px;
+    right: 50%;
+    transform: translateX(50%);
+    width: calc(100% - 30px); /* شبه full screen */
+    max-height: 70vh;
+    border-radius: 16px;
+  }
+
+  .notifHeader h4 {
+    font-size: 15px;
+  }
+
+  .notifItem {
+    padding: 12px;
+  }
+
+  .notifTitle {
+    font-size: 13px;
+  }
+
+  .notifTime {
+    font-size: 11px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+  .notificationDropdown {
+    top: 65px;
+    width: calc(100% - 20px);
+    max-height: 75vh;
+  }
+
+  .closeBtn {
+    font-size: 22px;
+  }
+  .NotfiGet h3{
+    font-size: 18px;
+  }
+  .NotfiGet .dateToNoti {
+    flex-direction: column;
+    gap: 0;
+  }
+  .NotfiGet{
+    height: 300px;
+  }
+  .NotfiGet input{
+  padding-left:22% ;
+}
+}
+

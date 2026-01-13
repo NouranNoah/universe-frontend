@@ -6,7 +6,7 @@ import './RatingWebSite.css'
 
 export default function RatingWebSite({setshowRatingModal}) {
     const [form, setForm] = useState({
-        subject: "",
+        title: "",
         ratings:0
     });
 
@@ -15,7 +15,8 @@ export default function RatingWebSite({setshowRatingModal}) {
         
     const resetAll = () => {
         setForm({
-            subject: "",
+            title: "",
+            ratings:0
         });
         setErrormsg("");
     };
@@ -80,7 +81,7 @@ export default function RatingWebSite({setshowRatingModal}) {
             <input
             type="text"
             placeholder="EX: focuses on building software using objects, classes, and reusable structures."
-            name="subject"
+            name="title"
             value={form.name}
             onChange={handleChange}
             />

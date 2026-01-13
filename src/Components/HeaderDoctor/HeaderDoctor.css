@@ -95,21 +95,30 @@
   position: relative;
 }
 
-.HeaderWeb > div:last-child i {
+.HeaderWeb > div:last-child .NotiIcon {
   font-size: 26px;
   color: #0079C8;
   cursor: pointer;
 }
 
 .num-of-notif {
-  position: absolute;
-  top: 3px;
-  left: 9px;
-  width: 10px;
-  height: 10px;
-  background-color: #87cfff;
-  border: 1px solid white;
-  border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 9px;
+    width: fit-content;
+    height: fit-content;
+    background-color: #87cfff;
+    border: 1px solid white;
+    border-radius: 50%;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    padding: 0px 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.num-of-notif:hover{
+  background-color: #63befb;
 }
 
 .HeaderWeb > div:last-child img {

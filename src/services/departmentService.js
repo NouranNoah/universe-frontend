@@ -11,11 +11,7 @@ export const addDepartment = async(form) => {
     return res.data;
 };
 export const getDepartment = async(id) => {
-    const res = await axiosInstance.get(`${API}/department/${id}`, 
-        {
-            headers: {Authorization : token}
-        }
-    )
+    const res = await axiosInstance.get(`${API}/department/${id}`)
     return res.data;
 };
 export const editDepartment = async(id , form) => {

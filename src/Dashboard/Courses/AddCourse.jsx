@@ -92,6 +92,7 @@ export default function AddCourse({courses,setShowAddModal,getCourses ,coursesTy
         try{
             const data = await getAllDepartment();
             setDepartments(data.allDepartments);
+            
         }catch(err){
             console.log("error", err);
             setErrormsg(err.response?.data?.message || "Failed to fetch departments");

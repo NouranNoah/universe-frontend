@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { editPassfun } from '../../services/adminService'
 import { useNavigate } from 'react-router-dom'
+import { AuthContext } from '../../Auth/AuthContext/authContext';
 
 export default function EditPass() {
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
-
+    const {logout} =  useContext(AuthContext);
     const [form, setForm] = useState({
         oldPassword: '',
         newPassword: '',
@@ -40,13 +41,14 @@ export default function EditPass() {
             await editPassfun({
             oldPassword: form.oldPassword,
             newPassword: form.newPassword,
+            confirmPassword: form.confirmPassword
             });
 
-            // success
-            navigate('/dashboard/profile');
+            // success logout and login agin
+            logout();
+            navigate('/');
         } catch (err) {
             setErrormsg(err.response?.data?.errors?.[0]?.msg|| "Update failed");
-           // setErrormsg(err.response?.data?.message || "Update failed");
         } finally {
             setLoading(false);
         }
@@ -71,7 +73,7 @@ export default function EditPass() {
                                     placeholder='*******************'
                                 />
                                 <i
-                                    className={`fa-solid ${showPassword ? "fa-eye-slash" : "fa-eye"}`}
+                                    className={`fa-solid ${showPassword ? "fa-eye" :"fa-eye-slash"}`}
                                     onClick={() => setShowPassword(!showPassword)}
                                 ></i>
                             </div>
@@ -88,7 +90,7 @@ export default function EditPass() {
                                     placeholder='*******************'
                                 />
                                 <i
-                                    className={`fa-solid ${showPassword ? "fa-eye-slash" : "fa-eye"}`}
+                                    className={`fa-solid ${showPassword ? "fa-eye" : "fa-eye-slash"}`}
                                     onClick={() => setShowPassword(!showPassword)}
                                 ></i>
                             </div>
@@ -105,7 +107,7 @@ export default function EditPass() {
                                 placeholder='*******************'
                                 />
                                 <i
-                                    className={`fa-solid ${showPassword ? "fa-eye-slash" : "fa-eye"}`}
+                                    className={`fa-solid ${showPassword ? "fa-eye" : "fa-eye-slash"}`}
                                     onClick={() => setShowPassword(!showPassword)}
                                 ></i>
                             </div>
